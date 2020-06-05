@@ -1,0 +1,62 @@
+{
+    "key": "group_5ce4439479d4b",
+    "title": "Rule Mappings",
+    "fields": [
+        {
+            "key": "field_5ce443b4a1188",
+            "label": "Member Rule IDs",
+            "name": "member_rule_ids",
+            "type": "text",
+            "instructions": "The rule id(s) of the Member Press rule that protects content tagged with member. Ex: '8049253' or comma separated: '8049253,8049254'",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ce44405a1189",
+            "label": "Subscriber Rule IDs",
+            "name": "subscriber_rule_ids",
+            "type": "text",
+            "instructions": "The rule id(s) of the Member Press rule that protects content tagged with subscriber. Ex: '8049252' or comma separated: '8049252,8049254'",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-memberpress-mapping"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1558465182
+}

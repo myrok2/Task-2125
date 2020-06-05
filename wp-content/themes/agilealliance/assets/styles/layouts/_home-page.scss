@@ -1,0 +1,408 @@
+.home-section-2, //What is Agile Alliance
+.home-section-3, // Agile Alliance 3 Learn Cards
+.home-section-4, // Resources Carousel
+.home-section-5, // Upcoming Events
+.home-section-6 // Sponsors & Corporate Members
+{
+  h2 {
+    font-weight: $sofia-extra-light;
+  }
+}
+
+.home-section-4, // Resources Carousel
+.home-section-5, // Upcoming Events
+.home-section-6 // Sponsors & Corporate Members
+{
+  &.vc_row { margin: 0 -15px !important; }
+}
+
+// Homepage and Events
+#home-hero,
+#events-hero {
+
+  max-height: 475px;
+  overflow: hidden;
+
+
+  .slick-slider { margin-bottom: 0; }
+
+  .home-carousel-height > .vc_column-inner {
+    height: 475px;
+  }
+
+  // For VC margin override
+  .ult-item-wrap { margin: 0 !important; }
+
+  .hero-content {
+
+    .uvc-main-heading.ult-responsive h2 {
+      @include font-styling(#fff, 34px, 48px);
+      font-weight: 200 !important;
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        @include font-styling(#fff, 50px, 50px);
+        font-weight: 200 !important;
+      }
+    }
+
+    .uvc-sub-heading {
+      @include font-styling(#fff, 16px, 28px);
+    }
+
+    .uvc-sub-heading.ult-responsive span {
+      @include rem(font-size, 18px);
+
+      font-weight: $sofia-extra-light;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+  }
+  .hero-button button {
+    @include vc_btn-alt($brand-yellow);
+    // font-weight: $sofia-black;
+    // line-height: 16px;
+    // letter-spacing: 0.93px;
+  }
+  button.ubtn-normal {
+    padding: 10px 30px;
+  }
+  .bg-image-carousel {
+    width: 100%;
+    position: relative;
+  }
+
+  .slick-prev{
+    z-index: 10;
+  }
+
+  /* Dots */
+  .slick-dots {
+    bottom: 4em;
+
+    li {
+
+      i {
+        font-size: 1px;
+        border: 2px solid;
+        border-color: $brand-grey-light;
+        border-radius: 50%;
+        background-color: $brand-grey-light;
+        width: 10px;
+        height: 10px;
+        padding: 3px;
+
+        &:hover, &:focus {
+          border-color: #ffffff;
+          background-color: transparent;
+
+          &:before {
+            //height: 20px;
+            //width: 20px;
+          }
+        }
+        &:before {
+          content: '';
+        }
+      }
+      &.slick-active i {
+        border-color: #ffffff;
+        background-color: transparent;
+      }
+    }
+  }
+
+}/* #home-hero */
+
+
+.home-section-2 {
+  // What is Agile Alliance Section
+  h2 {
+    color: $brand-grey-dark;
+    @include rem(font-size, 24px);
+    line-height: 33px;
+  }
+  p {
+    color: $brand-grey-light;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 28px);
+    margin: 0 auto;
+    a {
+      color: $brand-green;
+    }
+  }
+  .vc_separator .vc_sep_holder {
+    opacity: .30;
+  }
+}
+.home-section-3 {
+  // Learn about Agile - 3 cards section
+  margin-bottom: 0;
+
+  .image-bg-block-wpr .image-bg-text-overlay {
+  //  width: 90%;
+  }
+
+  h2{
+    @include rem(font-size, 24px);
+  }
+
+  .vc_col-sm-12 {
+    // padding: 0 7%;
+  }
+}
+.home-section-4 {
+  // Recent Resources Section
+  h2 {
+    @include rem(font-size, 24px);
+    font-weight: $sofia-light;
+  }
+  .vc_separator .vc_sep_holder {
+    opacity: .30;
+  }
+  // VC update overrides
+  .ubtn-ctn-center { margin-bottom: 0 !important; }
+  a.ubtn-link { margin-top: 1.5em !important; }
+}
+.image-bg-block-wpr {
+  padding: 0;
+
+  @include breakpoint(medium) { height: 390px; }
+
+  .wpb_single_image {
+    margin-bottom: 0;
+  }
+
+  .vc_single_image-wrapper {
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .image-bg-text-overlay {
+    @include center-center;
+  }
+}
+// Upcoming Events Section
+.home-section-5{
+  background-color: #6A6A6A; // Just in case VC is silly
+  .wpb_column.vc_column_container {
+    padding: 0;
+  }
+
+  .featured-events-wpr {
+    height: 335px;
+    position: relative;
+
+    &:before {
+      @include section-border($brand-yellow);
+    }
+
+    .vc_gitem-row-position-bottom {
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #ffffff;
+      //background-color: #ffffff;
+    }
+
+    .vc_gitem-zone-mini {
+      .vc_gitem_row {
+        height: 45%;
+        overflow: hidden;
+
+        .vc_gitem-col {
+          height: 100%;
+        }
+      }
+    }
+
+    .featured-event-image-wpr {
+      padding: 0;
+    }
+
+    .vc_col-sm-4:nth-of-type(1) {
+      display: none;
+    }
+  }
+
+  // VC update overrides
+  .ubtn-ctn-center { margin-bottom: 0 !important; }
+  a.ubtn-link { margin-top: 1.5em !important; }
+}
+
+
+// Sponsored Section & Corporate Members
+.home-section-6 {
+  h2 {
+    @include rem(font-size, 24px);
+    font-weight: $sofia-light;
+    color: $base-text-dark;
+  }
+  .vc_separator .vc_sep_holder .vc_sep_line {
+    opacity: .30;
+  }
+  .slick-slider {
+    margin: 0;
+
+    .vc_single_image-wrapper {
+      height: 100px;
+    }
+
+    img {
+      @include center-center;
+    }
+  }
+}
+.home-section-7 {
+  height: 255px;
+  color: #ffffff;
+
+  margin-bottom: 0;
+
+  h2,
+  h4 {
+    //font-family: $sofia;
+    font-weight: $sofia-extra-light;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .vc_col-sm-12 {
+    padding: 0 20% !important;
+  }
+
+  .become-a-member-cta-wpr,
+  .newsletter-signup-cta-wpr {
+    height: 100%;
+    padding-top: 30px;
+
+    .ubtn-normal {
+      padding: 12px 40px;
+    }
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+
+  .home-section-2 {
+    // What is Agile Alliance Section
+    p {
+      max-width: 810px;
+    }
+    .vc_separator .vc_sep_holder {
+      opacity: .30;
+    }
+  }
+
+  .home-section-5 .featured-events-panels {
+
+    .vc_gitem-zone-mini .vc_col-sm-6:first-of-type {
+      width: 40%;
+    }
+
+    .vc_gitem-zone-mini .vc_col-sm-6:last-of-type {
+      width: 60%;
+    }
+
+    .featured-event-text-left {
+      //font-family: $sofia;
+      color: $base-text-light;
+      border-right: 1px solid $base-text-light;
+    }
+
+    .featured-event-text-right {
+      //font-family: $sofia;
+      color: $base-text-light;
+      margin: 0;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .featured-event-date {
+      font-size: 12px;
+
+      margin-bottom: 0;
+      padding-bottom: 20px;
+
+      padding-right: 10px;
+
+    }
+
+    .featured-event-name {
+      //font-family: $sofia;
+      color: $base-text;
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    .featured-event-building {
+      font-size: 14px !important;
+      font-weight: $sofia-extra-light;
+      margin-bottom: 20px;
+    }
+
+    .featured-event-location {
+      font-size: 12px !important;
+      font-weight: 200 !important;
+    }
+  }
+  .home-section-5 .featured-events-panel-1 {
+
+    .vc_col-sm-4:nth-of-type(1) {
+      width: 50%;
+
+      .vc_gitem-zone-mini .vc_col-sm-6 {
+        width: 50% !important;
+      }
+
+      .featured-event-text-right {
+        padding-left: 20px;
+      }
+
+      .featured-event-date {
+        font-size: 36px;
+      }
+
+      .featured-event-name {
+        font-size: 24px !important;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .featured-event-building {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+      }
+
+    }
+
+    .vc_col-sm-4:nth-of-type(2),
+    .vc_col-sm-4:nth-of-type(3) {
+      width: 25%;
+
+      .featured-event-date,
+      .featured-event-name {
+        margin-top: 15px;
+      }
+    }
+  }
+
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}

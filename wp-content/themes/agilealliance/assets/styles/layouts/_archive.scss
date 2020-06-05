@@ -1,0 +1,391 @@
+//
+// Top level landing page
+// --------------------------------------------------
+.aa_landing {
+
+  .hero-minititle-bar,
+  .hero-minititle { display: none;}
+
+  @include breakpoint(medium) {
+    .hero-minititle-bar,
+    .hero-minititle { display: block;}
+  }
+
+  .image-bg-block-wpr > .vc_column-inner > .wpb_wrapper:first-of-type {
+    @extend .aa_img-overlay;
+  }
+
+  &.aa_landing-section {
+
+    &.aa_landing-header {
+      &.aa_page-header h1 { margin: 20px 0; }
+
+      p { padding: 0 15px; }
+    }
+
+    &.aa_landing-text-break {
+
+      .wpb_wrapper:first-of-type {
+        width: 100%;
+        max-width: 550px !important;
+        margin: 0 auto;
+      }
+
+      h2 { @include font-styling($base-text-dark, 22px, 32px); }
+
+      p,
+      ul li { @include font-styling($brand-grey-light, 16px, 24px); }
+
+      .aa_landing-text-break-title h2 { @include font-styling($base-text-dark, 26px, 38px); }
+
+      .aa_landing-text-break-sub-title p,
+      .aa_landing-text-break-sub-title span {
+        @include font-styling($brand-grey-light, 16px, 24px);
+        font-weight: 200 !important;
+
+        @include breakpoint(large) {
+          font-size: 18px !important;
+        }
+      }
+    }
+
+    &.aa_landing-cta-link {
+
+      &.full-width-cta {
+        .vc_column_container {
+          padding: 0;
+
+          & > .wpb_wrapper:first-of-type { @extend .aa_img-overlay; }
+        }
+      }
+
+      h2,
+      h3,
+      h4 {
+        @include font-styling(#fff, 18px, 32px);
+        line-height: normal !important;
+
+        span { color: #fff !important; }
+
+        @include breakpoint(medium) {
+          font-size: 24px!important;
+          line-height: 29px!important;
+        }
+      }
+
+      h2 { padding-right: 35% !important; }
+      &.full-width-cta h2 { padding-right: 0% !important; }
+
+      h3 {
+        @include font-styling(#fff, 18px, 32px);
+
+        @include breakpoint(medium) {
+          font-size: 18px!important;
+          line-height: 22px!important;
+        }
+      }
+
+      p,
+      p span,
+      ul li {
+        @include font-styling(#cbc8c8, 16px, 24px);
+        line-height: normal;
+        font-weight: 200 !important;
+
+        @include breakpoint(medium) {
+          font-size: 18px !important;
+          line-height: 29px !important;
+        }
+      }
+
+      ul { margin-left: 2em; }
+
+      & > .wpb_wrapper:first-of-type {
+        background-color: $base-border-dark;
+        height: 100%;
+        padding-top: 3em;
+      }
+
+      .aa_vc-list-wpr {
+        padding: 0 5% !important;
+
+        h2 {
+          @include font-styling($base-text-dark, 22px, 32px);
+          padding-right: 0% !important;
+
+          @include breakpoint(super) {
+            font-size: 28px !important;
+          }
+        }
+        ul { margin: 0; }
+        ul li {
+          list-style-type: none;
+
+          span {
+            @include font-styling($base-text-dark, 16px, 24px);
+            font-weight: 200 !important;
+          }
+        }
+      }
+
+      .aa_landing-cta-text-wpr {
+        max-width: 400px;
+        // height: 350px;
+        margin: 0 auto;
+        padding: 0 45px;
+
+        padding-top: 1px !important; // Safari overlay fix;
+
+        @include breakpoint(medium) {
+          padding: 0 15px;
+        }
+
+
+        &.full-width {
+          max-width: 600px;
+          height: auto;
+        }
+      }
+
+      @include breakpoint(medium) {
+        // .aa_landing-cta-text-wpr { height: 500px; }
+      }
+    }
+
+    &.aa_landing-cta-form {
+      max-width: 550px !important;
+      margin: 0 auto;
+
+      h2 { @include font-styling($nav-coal, 18px, 32px); }
+      p { @include font-styling($brand-grey-light, 16px, 24px); }
+    }
+  }
+}
+
+// ----- 12 Principles  -----
+.aa_principles-list {
+  margin-bottom: 0;
+  border-bottom: 1px solid $base-border;
+  padding: 0 1em;
+
+  &:last-of-type { border-bottom: 1px solid $base-border; }
+
+  @include breakpoint(medium) {
+    &.top-left { border-right: 1px solid $base-border; }
+    &:last-of-type { border-bottom: 0; }
+  }
+
+  p {
+    margin-top: 2rem;
+    margin-bottom: 2rem !important;
+    @include font-styling($brand-grey-light, 16px, 24px);
+
+    @include breakpoint(medium) {
+      margin-top: 1rem;
+      margin-bottom: 1rem !important;
+    }
+   }
+
+  .aa_principles-list-number p {
+    @include font-styling($brand-grey-dark, 32px, 48px);
+    line-height: 3.2rem !important;
+
+    @include breakpoint(super) {
+      font-size: 48px;
+    }
+  }
+}
+
+
+//
+// Archive page
+// --------------------------------------------------
+
+// ----- Shortcode archive cards (START) ----- //
+.aa_vc-archive-shortcode {
+  padding: 1.5em 0 2.5em;
+
+  @include breakpoint(medium) { padding: 3em 0 4em; }
+}
+
+.aa_vc-archive-shortcode-title {
+  margin-bottom: 1em;
+  @include font-styling($base-text, 24px, 28px);
+
+  @include breakpoint(medium) {
+    font-size: 36px;
+    line-height: 43px;
+
+    margin-bottom: 2em;
+  }
+}
+
+.aa_archive-card-wpr {
+  border-top: 3px solid transparent;
+
+  &.aa_border-orange     { border-color: $brand-orange; }
+  &.aa_border-blue-dark  { border-color: $brand-blue-dark; }
+  &.aa_border-blue-light { border-color: $brand-blue-light; }
+  &.aa_border-purple     { border-color: $brand-purple; }
+  &.aa_border-yellow     { border-color: $brand-yellow; }
+  &.aa_border-green      { border-color: $brand-green; }
+}
+
+.aa_archive-card {
+  padding: 0;
+
+  &.top-left {}
+
+  &.bottom-right {
+    margin-top: -8px; // mobile hack reset
+
+    @include breakpoint(medium) {
+      margin-top: 0px; // mobile hack reset
+    }
+  }
+}
+
+.aa_archive-content {
+  width: 100%;
+  min-height: 150px;
+  display: inline-block;
+
+  color: $base-text;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $base-text;
+  }
+
+  &.top-left {
+    background-size: cover;
+    background-position: top center;
+
+    border-bottom: 1px solid transparent;
+
+    .aa_img-overlay { height: 101%; } // Override for transparent border-bottom
+  }
+
+  &.bottom-right {
+    // TEMP STYLING
+    // background-color: grey;
+
+    padding:0 1em;
+    // @include center-center;
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: 0;
+
+    h4 {
+      @include font-styling($base-text-dark, 16px, 20px);
+
+      @include breakpoint(medium) {
+        font-size: 18px;
+        font-weight: 200 !important;
+      }
+    }
+
+    .aa_field-title {
+      @include font-styling($base-text, 14px, 20px);
+      // font-weight: 200 !important;
+    }
+
+    .aa_field-content {
+      @include font-styling($base-text-light, 14px, 20px );
+      font-weight: 200 !important;
+
+      &:last-of-type { margin-bottom: 1em; }
+    }
+
+    .aa_field-title,
+    .aa_field-content {
+      margin-bottom: 0;
+
+      @include breakpoint(medium) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    @include breakpoint(medium) {}
+  }
+}
+
+// ----- Shortcode archive cards (END) ----- //
+
+
+
+// ----- Archive.php (START) ----- //
+// .aa_archive-cards.container-fluid {
+//   max-width: 1500px;
+//   margin: 0 auto;
+// }
+
+// .aa_archive-card {
+//   display: block;
+//   margin: 20px 0;
+//   border-top: 3px solid grey;
+
+//     &.agile101 { border-top-color: $brand-blue-light; }
+//     &.resources { border-top-color: $brand-purple; }
+//     &.events { border-top-color: $brand-yellow; }
+//     &.community { border-top-color: $brand-orange; }
+//     &.the-alliance { border-top-color: $brand-blue-dark; }
+
+//   .aa_arc-card-content {
+//     padding: 0;
+//     background-size: cover;
+//     background-position: top center;
+
+//     &.bottom-right {
+//       padding: 0 15px;
+//       border: 1px solid $base-border;
+//     }
+//   }
+
+//   img { width: 100%; height: auto; }
+
+//   h4 {
+//     @include font-styling($base-text, 16px, 22px);
+//     font-weight: 200 !important;
+//   }
+
+//   p,
+//   span {
+//     @include font-styling($base-text, 14px, 20px);
+//   }
+
+//   @include breakpoint(medium) {
+//     .aa_archive-card {
+//       h4 {
+//         @include font-styling($base-text, 16px, 22px);
+//         font-weight: 200 !important;
+//       }
+
+//       p,
+//       span {
+//         @include font-styling($base-text, 14px, 20px);
+//       }
+//     }
+//   }
+// }
+
+// ----- Archive.php (END) ----- //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

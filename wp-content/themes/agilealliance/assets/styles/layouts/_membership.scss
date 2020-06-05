@@ -1,0 +1,238 @@
+//
+// Membership Flow
+// --------------------------------------------------
+
+.aa_membership-pricing {
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  @include breakpoint(medium) {
+    padding-top: 3.6em;
+    padding-bottom: 3.6em;
+  }
+}
+
+.aa_full-width-row { margin-bottom: 0; }
+
+.aa_membership-text {
+  h3 {
+    color: $base-text;
+    font-size: 24px;
+    line-height: 2.8em;
+    font-weight: 200 !important;
+  }
+
+  p {
+    @include font-styling($base-text, 16px, 18px);
+    line-height: 1.8em !important;
+    font-weight: 200 !important;
+
+    a {
+      color: $brand-blue-light !important;
+      &:hover {
+        color: $brand-blue-dark !important;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.aa_pricing-info-block {
+  .ult_pricing_table {
+    border-color: #03bbd3;
+    border-bottom: 0;
+  }
+
+  .ult_pricing_heading { padding-bottom: 0 !important; }
+
+  .ult_price_features {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ul li {
+    @include font-styling($base-text, 16px, 18px);
+    line-height: 1.8em !important;
+    font-weight: 200 !important;
+    padding: 1em 0 !important;
+
+    @include breakpoint(medium) { line-height: 28px !important; }
+
+    &:last-of-type { border-bottom: 0 !important; }
+
+    a {
+      color: $brand-blue-light !important;
+      &:hover {
+        color: $brand-blue-dark !important;
+        // text-decoration: underline !important;
+      }
+    }
+  }
+}
+
+.aa_pricing-block {
+  margin: 0;
+  padding: 0 15px;
+  background-color: #f6f6f6;
+
+  &:last-of-type p { border-bottom: 0; }
+
+  .aa_pricing-block-text{
+
+    &.left {
+      padding-right: 0;
+      width: 66.66666667%;
+      float: left;
+    }
+
+    &.right {
+      padding-left: 0;
+      width: 33.33333333%;
+      float:right;
+    }
+  }
+
+  p {
+    @include font-styling($base-text, 16px, 24px);
+    font-weight: 200 !important;
+
+    border-bottom: 1px solid #ddd;
+    padding: 2em 0;
+  }
+}
+
+.aa_membership-pricing-footer {
+  padding-bottom: 3.6em;
+
+  .aa_vc-btn {
+    width: 100%;
+
+    button { width: 75%; }
+  }
+}
+
+//
+// Success page
+// --------------------------------------------------
+
+.aa_membership-success {}
+
+.aa_membership-success-header {
+  text-align: center;
+  padding: 3.6em 15px;
+  border-bottom: 1px solid #ddd;
+
+  h1, p {
+    margin: 0 auto;
+  }
+
+  h1 {
+    @extend .aa_post-title;
+    color: $base-text;
+    margin-bottom: 1em;
+  }
+
+  p {
+    @extend .aa_post-sub-title;
+    color: $base-text-light;
+
+    @include breakpoint(large) {
+      max-width: 600px;
+    }
+  }
+}
+
+.aa_membership-success-content {
+  padding-top: 3.6em;
+  padding-bottom: 3.6em;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    div[class^="col-"]:nth-of-type(3) .aa_membership-success-card-wpr,
+    div[class^="col-"]:last-of-type .aa_membership-success-card-wpr { margin-bottom: 0; }
+  }
+
+  .aa_membership-success-card-wpr {
+    height: 250px;
+    width: 100%;
+    margin-bottom: 1.5em;
+
+    @include transition-std(all);
+
+    @include breakpoint(medium) {
+      height: 325px;
+    }
+
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+
+    .card-link {
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+
+      border-top: 4px solid transparent;
+
+      &.agile101     { border-color: $brand-blue-light; }
+      &.resources    { border-color: $brand-purple; }
+      &.events       { border-color: $brand-yellow; }
+      &.community    { border-color: $brand-orange; }
+      &.the-alliance { border-color: $brand-blue-dark; }
+      &.general      { border-color: $brand-green; }
+    }
+
+    .card-header-img {
+      height: 45%;
+      background-position: center;
+      background-size: cover;
+
+      // @include breakpoint(large) { height: 40%; }
+    }
+
+    .card-content {
+      height: 55%;
+      border: 1px solid #ddd;
+      border-top: 0;
+      position: relative;
+
+      // @include breakpoint(large) { height: 60%; }
+
+      h3 {
+        margin: 0;
+        width: 100%;
+        @include font-styling($base-text, 20px, 28px);
+        @include center-center;
+        top: 40%;
+
+        @include breakpoint(large) { @include font-styling($base-text, 18px, 24px); }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

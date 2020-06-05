@@ -1,0 +1,554 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,latin-ext);
+.amaran.default {
+    width: 225px;
+    min-height: 65px;
+    background: #f3f3f3;
+    color: #222;
+    margin: 15px;
+    padding-left: 70px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 1px 1px 1px #000
+}
+.amaran.default .ic {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  /*  top: 45px;*/
+  top:50%;
+    left: 10px;
+    background: #000;
+    margin-top: -25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 54px;
+    font-size: 22px;
+}
+
+.amaranfull.default{
+    padding-left: 20px;
+}
+.amaranfull.default .ic {
+    display: none;
+}
+.amaran.default p {
+    padding: 0;
+    margin: 0
+}
+.amaran.default p.bold {} .amaran.default p span {
+    font-weight: 300
+}
+.amaran.default p span.light {
+    font-size: 13px;
+    display: block;
+    color: #777
+}
+.amaran.default.error {} .amaran.default.warning {} .amaran.default.error p.bold {
+    color: #D82222
+}
+.amaran.default.error .ic {
+    background-color: #D82222;
+    color: #fff
+}
+.amaran.default.warning p.bold {
+    color: #9F6000
+}
+.amaran.default.warning .ic {
+    background-color: #9F6000;
+    color: #fff
+}
+.amaran.inset-white {
+    background: #fff;
+    margin-right: -10px;
+    border-radius: 3px;
+    padding: 10px;
+    color: #000;
+    -webkit-box-shadow: inset 2px 2px 20px -3px rgba(0, 0, 0, .75);
+    -moz-box-shadow: inset 2px 2px 20px -3px rgba(0, 0, 0, .75);
+    box-shadow: inset 2px 2px 20px -3px rgba(0, 0, 0, .75)
+}
+.amaran.inset-white:hover {
+    box-shadow: 0 1px 0 #2392F3 inset, 0 -1px 0 #2392F3 inset, 1px 0 0 #2392F3 inset, -1px 0 0 #2392F3 inset, 0 0 4px rgba(35, 146, 243, .5);
+    outline: 0
+}
+
+    .amaran.user {
+        width: 300px;
+        min-height: 100px;
+        background: #f3f3f3;
+        color: #222;
+        margin: 15px;
+        font-family: 'Open Sans', Helvetica, Arial;
+        font-size: 13px;
+        font-weight: 300;
+        box-shadow: 1px 1px 1px #000;
+        border-radius: 0;
+        padding: 0
+   }
+   .amaran.user .ic {
+       width: 100px;
+       height: 100px;
+       position: relative;
+       background: #000;
+       float: left
+  }
+  .amaran.user .ic img {
+      max-width: 100%
+ }
+ .amaran.user .info {
+     padding-left: 110px;
+     padding-top: 10px
+}
+.amaran.user .info b {
+    display: block;
+    font-size: 16px
+}
+.amaran.white {
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f5f5f5), color-stop(100%, #eaeaea));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #eaeaea);
+    background-image: -moz-linear-gradient(top, #f5f5f5, #eaeaea);
+    background-image: -o-linear-gradient(top, #f5f5f5, #eaeaea);
+    background-image: linear-gradient(top, #f5f5f5, #eaeaea);
+    box-shadow: 0 2px 0 #fff inset;
+    border: 1px solid #666;
+    color: #222
+}
+.amaran.user {
+    width: 300px;
+    min-height: 100px;
+    background: #f3f3f3;
+    color: #222;
+    margin: 15px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    font-size: 13px;
+    font-weight: 300;
+    box-shadow: 1px 1px 1px #000;
+    border-radius: 0;
+    padding: 0;
+}
+.amaran.user .ic {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: #000;
+    float: left;
+}
+.amaran.user .ic img {
+    max-width: 100%;
+}
+.amaran.user .info {
+    padding-left: 110px;
+    padding-top: 10px;
+}
+.amaran.user .info b {
+    display: block;
+    font-size: 16px;
+}
+
+/*rounded*/
+
+.amaran.rounded {
+    width: 100px;
+    min-height: 100px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    margin: 20px;
+}
+.amaran.rounded img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+/*readmore*/
+
+.amaran.readmore {
+    width: 300px;
+    min-height: 100px;
+    background: #fff;
+    border: 4px solid #e45e39;
+    border-radius: 0;
+    padding: 0;
+    color: #222;
+    position: relative;
+    margin-bottom: 25px;
+}
+.amaran.readmore .title {
+    background: #e45e39;
+    padding: 5px 10px 5px 45px;
+    font-family: 'Open Sans', arial;
+    font-size: 13.5px;
+    color: #fff;
+}
+.amaran.readmore .vcpn-content {
+    padding: 5px;
+    font-family: 'Open Sans', arial;
+    font-size: 14px;
+}
+.amaran.readmore .readmore-user {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: -13px;
+    z-index: 9999;
+    border: 4px solid #e45e39;
+}
+
+i.hideicon{
+    display: none !important;
+}
+
+
+
+/*blur*/
+
+.amaran.blur {
+    width: 400px;
+    min-height: 65px;
+    color: #222;
+    margin: 15px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), inset 0 0px 10px rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+.amaran.blur h2 {
+    font-family: 'Roboto', Arial;
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+}
+.amaran.blur h2:before {
+    content: "\26a0";
+}
+.amaran.blur .message {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+
+
+/** Dark **/
+.amaran.simdark{
+  width:300px;
+  min-height: 45px;
+  background:#1B1E24;
+  background: -webkit-linear-gradient(left, #111213, #111213 15%, #1B1E24 15%, #1B1E24);
+  background: -moz-linear-gradient(left, #111213, #111213 15%, #1B1E24 15%, #1B1E24);
+  background: -o-linear-gradient(left, #111213, #111213 15%, #1B1E24 15%, #1B1E24);
+  background: -ms-linear-gradient(left, #111213, #111213 15%, #1B1E24 15%, #1B1E24);
+  background: linear-gradient(left, #111213, #111213 15%, #1B1E24 15%, #1B1E24);
+  color:#fff;
+  font-family:'Open Sans',Helvetica,Arial;
+  font-size:13px;
+  font-weight:300;
+  margin:0 5px 0 5px;
+  border-radius:0;
+  overflow:hidden;
+  border-bottom:1px solid #111213;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+}
+.amaran.simdark:first-child {
+  border-radius:6px;
+}
+.amaran.simdark:last-child {
+  margin-bottom:8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom:none;
+}
+.amaran.simdark .simdark-spinner {
+  width:45px;min-height:45px;display:block;float:left;position:relative;
+
+}
+.amaran.simdark .simdark-spinner span{
+  width:18px;
+  height:18px;
+  background:#27ae60;
+  display:block;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-11px;
+  margin-top:-9px;
+}
+.amaran.simdark .simdark-message {
+  float:left;
+
+}
+.amaran.simdark .simdark-message span {
+  padding:3px;
+  line-height:43px;
+}
+.amaran.simdark .simdark-message:after {
+  clear:both;
+}
+
+
+
+
+/*Themes*/
+
+
+/*Red*/
+
+.amaran.default.red .ic, .amaran.readmore.red .title {
+    background: #D82222;
+    color: #fff;
+}
+.amaran.default.red p.bold {
+    color: #D82222;
+}
+.amaran.readmore.red .readmore-user, .amaran.readmore.red {
+    border: 4px solid #D82222;
+}
+.amaran.rounded.red,.amaran.simdark.red .simdark-spinner span {
+    background:rgba(216,34,34, 0.75);
+}
+/*Warning*/
+
+.amaran.default.waring .ic, .amaran.readmore.warning .title {
+    background: #9F6000;
+    color: #fff;
+}
+.amaran.default.waring p.bold {
+    color: #9F6000;
+}
+.amaran.readmore.warning .readmore-user, .amaran.readmore.warning {
+    border: 4px solid #9F6000;
+}
+.amaran.rounded.warning ,.amaran.simdark.warning .simdark-spinner span {
+    background:rgba(159,96,0, 0.75);
+}
+/*Blue*/
+
+.amaran.default.blue .ic, .amaran.user.blue, .amaran.readmore.blue .title {
+    background: #2773ed;
+    color: #fff;
+}
+.amaran.default.blue p.bold {
+    color: #2773ed;
+}
+.amaran.readmore.blue .readmore-user, .amaran.readmore.blue {
+    border: 4px solid #2773ed;
+}
+.amaran.rounded.blue,.amaran.simdark.warning .simdark-spinner span {
+    background:rgba(39,115,237, 0.75);
+}
+/*Yellow*/
+
+.amaran.default.yellow .ic, .amaran.user.yellow, .amaran.readmore.yellow .title {
+    background: #f4b300;
+    color: #fff;
+}
+.amaran.default.yellow p.bold {
+    color: #f4b300;
+}
+.amaran.readmore.yellow .readmore-user, .amaran.readmore.yellow {
+    border: 4px solid #f4b300;
+}
+.amaran.rounded.yellow,.amaran.simdark.warning .simdark-spinner span {
+    background:rgba(244,179,0, 0.75);
+}
+/*Green*/
+
+.amaran.default.green .ic, .amaran.user.green, .amaran.readmore.green .title {
+    background: #78ba00;
+    color: #fff;
+}
+.amaran.default.green p.bold {
+    color: #78ba00;
+}
+.amaran.readmore.green .readmore-user, .amaran.readmore.green {
+    border: 4px solid #78ba00;
+}
+.amaran.rounded.green,.amaran.simdark.green .simdark-spinner span  {
+    background:rgba(120,186,0, 0.75);
+}
+
+/* Pink */
+
+.amaran.default.pink .ic, .amaran.user.pink, .amaran.readmore.pink .title {
+    background: #FFC0CB;
+    color: #fff;
+}
+.amaran.default.pink p.bold {
+    color: #FFC0CB;
+}
+.amaran.readmore.pink .readmore-user, .amaran.readmore.pink {
+    border: 4px solid #FFC0CB;
+}
+.amaran.rounded.pink,.amaran.simdark.pink .simdark-spinner span  {
+    background:rgba(255,192,203, 0.75);
+}
+
+/*magenta*/
+.amaran.default.magenta .ic, .amaran.user.magenta, .amaran.readmore.magenta .title {
+    background: #FF00FF;
+    color: #fff;
+}
+.amaran.default.magenta p.bold {
+    color: #FF00FF;
+}
+.amaran.readmore.magenta .readmore-user, .amaran.readmore.magenta {
+    border: 4px solid #FF00FF;
+}
+.amaran.rounded.magenta,.amaran.simdark.magenta .simdark-spinner span  {
+    background:rgba(255,0,255, 0.75);
+}
+
+
+/*gold*/
+
+.amaran.default.gold .ic, .amaran.user.gold, .amaran.readmore.gold .title {
+    background: #FFD700;
+    color: #fff;
+}
+.amaran.default.gold p.bold {
+    color: #FFD700;
+}
+.amaran.readmore.gold .readmore-user, .amaran.readmore.gold {
+    border: 4px solid #FFD700;
+}
+.amaran.rounded.gold,.amaran.simdark.gold .simdark-spinner span  {
+    background:rgba(255,215,0, 0.75);
+}
+
+
+
+/*Orange*/
+
+.amaran.default.orange .ic, .amaran.user.orange, .amaran.readmore.orange .title {
+    background: #e45e39;
+    color: #fff;
+}
+.amaran.default.orange p.bold {
+    color: #e45e39;
+}
+.amaran.readmore.orange .readmore-user, .amaran.readmore.orange {
+    border: 4px solid #e45e39;
+}
+.amaran.rounded.orange,.amaran.simdark.orange .simdark-spinner span  {
+    background:rgba(228,94,57, 0.75);
+}
+
+
+
+/*awesome*/
+
+.amaran.awesome {
+    width: 300px;
+    min-height: 65px;
+    background: #f3f3f3;
+    color: #222;
+    margin: 15px;
+    padding-left: 70px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 1px 1px 1px #000;
+}
+.amaran.awesome .ic {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    background: #000;
+    margin-top: -25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+}
+.amaran.awesome p {
+    padding: 0;
+    margin: 0;
+}
+.amaran.awesome p.bold {} .amaran.awesome p span {
+    font-weight: 300;
+}
+.amaran.awesome p span.light {
+    font-size: 13px;
+    display: block;
+    color: #777;
+}
+.amaran.awesome.error {} .amaran.awesome.warning {}/* OK*/
+
+.amaran.awesome.ok p.bold {
+    color: #178B13;
+}
+.amaran.awesome.ok .ic {
+    background-color: #178B13;
+    color: #fff;
+}
+/* ERROR */
+
+.amaran.awesome.error p.bold {
+    color: #D82222;
+}
+.amaran.awesome.error .ic {
+    background-color: #D82222;
+    color: #fff;
+}
+/* WARNING */
+
+.amaran.awesome.warning p.bold {
+    color: #9F6000;
+}
+.amaran.awesome.warning .ic {
+    background-color: #9F6000;
+    color: #fff;
+}
+/* YELLOW */
+
+.amaran.awesome.yellow p.bold {
+    color: #CFA846;
+}
+.amaran.awesome.yellow .ic {
+    background-color: #CFA846;
+    color: #fff;
+}
+/* BLUE */
+
+.amaran.awesome.blue p.bold {
+    color: #2980b9;
+}
+.amaran.awesome.blue .ic {
+    background-color: #2980b9;
+    color: #fff;
+}
+/* GREEN */
+
+.amaran.awesome.green p.bold {
+    color: #27ae60;
+}
+.amaran.awesome.green .ic {
+    background-color: #27ae60;
+    color: #fff;
+}
+/* PURPLE */
+
+.amaran.awesome.purple p.bold {
+    color: #5B54AA;
+}
+.amaran.awesome.purple .ic {
+    background-color: #5B54AA;
+    color: #fff;
+}

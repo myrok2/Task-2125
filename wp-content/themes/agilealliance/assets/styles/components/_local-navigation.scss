@@ -1,0 +1,142 @@
+//
+// Tabs (Desktop)
+// --------------------------------------------------
+.aa-local-navigation {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.aa-local-navigation__item {
+  display: flex;
+  align-items: stretch;
+  margin-right: 4px;
+  list-style: none;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.aa-local-navigation__link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: $brand-primary;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 22px;
+  transition: background-color ease-in-out .3s;
+
+  @include breakpoint(lg-and-below) {
+    font-size: 15px; // Shrinking to fit vertical min space.
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: darken($brand-primary, 8%);
+    color: white;
+  }
+}
+
+// Active tab
+.aa-local-navigation,
+.aa-local-navigation--blue,
+.aa-local-navigation--purple,
+.aa-local-navigation--yellow,
+.aa-local-navigation--orange,
+.aa-local-navigation--grey-blue,
+.aa-local-navigation--green {
+
+  .aa-local-navigation__link.aa-local-navigation__link--active {
+    background: white;
+    border: 1px solid $base-border;
+    border-bottom-width: 0;
+    color: $base-text;
+    &:hover {
+      background-color: white;
+      color: $base-text;
+    }
+  }
+}
+
+// Color Labeling
+.aa-local-navigation--blue {
+  .aa-local-navigation__link {
+    background-color: $brand-blue-light;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-blue-light, 8%);
+    }
+  }
+}
+
+.aa-local-navigation--purple {
+  .aa-local-navigation__link {
+    background-color: $brand-purple;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-purple, 8%);
+    }
+  }
+}
+
+.aa-local-navigation--yellow {
+  .aa-local-navigation__link {
+    background-color: $brand-yellow;
+    color: $base-text-dark;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-yellow, 8%);
+      color: $base-text-dark;
+    }
+  }
+}
+
+.aa-local-navigation--orange {
+  .aa-local-navigation__link {
+    background-color: $brand-orange;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-orange, 8%);
+    }
+  }
+}
+
+.aa-local-navigation--grey_blue {
+  .aa-local-navigation__link {
+    background-color: $brand-blue-dark;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-blue-dark, 8%);
+    }
+  }
+}
+
+.aa-local-navigation--green {
+  .aa-local-navigation__link {
+    background-color: $brand-green-sea;
+    &:hover,
+    &:focus {
+      background-color: darken($brand-green-sea, 8%);
+    }
+  }
+}
+
+//
+// Dropdown (Medium/Small Devices)
+// --------------------------------------------------
+.aa-local-navigation__dropdown {
+  display: block;
+  width: 100%;
+  margin: 30px 0;
+
+  @include breakpoint(large) {
+    display: none;
+  }
+}

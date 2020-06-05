@@ -1,0 +1,207 @@
+//
+// Conference Site
+// --------------------------------------------------
+.aa_cs-landing {
+
+  h4,
+  &.aa_landing.aa_landing-section.aa_landing-cta-link h2 {
+    @include font-styling($base-text, 16px, 24px);
+    font-size: 16px !important;
+    font-weight: 600 !important;
+
+    margin-bottom: 2em;
+  }
+
+  .vc_separator {
+    margin-bottom: 0;
+
+    span { border-color: #9b9b9b !important; }
+  }
+
+  .image-bg-block-wpr {
+    height: 450px;
+    background-position: top center !important;
+  }
+}
+
+// Newsletter Signup Model
+.aa_cs-model {
+  @include breakpoint(medium) {  .ult_modal.ult-small { width: 80% } }
+  @include breakpoint(super) {  .ult_modal.ult-small { width: 35% } }
+
+  p { max-width: 80% !important; }
+
+  h3 + p { margin-bottom: 1em !important; }
+}
+
+.aa_cs-update-card {
+  @include breakpoint(medium) { width: 50% }
+  @include breakpoint(super) { width: 25% }
+}
+
+// Launch landing page
+.aa_cs-cta-height {
+  height: 315px;
+  @include breakpoint(medium) { height: 450px; }
+
+  &.top-left {
+    border: 0 !important;
+    border-bottom: 2px solid rgba(0,0,0,0.2) !important;
+    @include breakpoint(medium) {
+      border-bottom: 0 !important;
+      border-right: 2px solid rgba(0,0,0,0.2) !important;
+    }
+  }
+}
+
+// Launch landing page
+.aa_cs-text-break {
+  h2 {
+    @include font-styling($base-text, 28px, 32px);
+    font-weight: 200 !important;
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+
+  p span {
+    @include font-styling($base-text-light, 16px, 24px);
+    font-weight: 200 !important;
+    display: block;
+    margin-bottom: 1em !important;
+  }
+}
+
+// Launch landing page
+.aa_cs-newsletter-footer {
+
+  p {
+    margin-top: .25em;
+    margin-bottom: 1em !important;
+    @include breakpoint(medium) { float: left; }
+  }
+
+  p span {
+    @include font-styling(#fff !important, 16px, 20px);
+    font-weight: 200 !important;
+  }
+
+  .ult-modal-input-wrapper { margin-bottom: 0; }
+}
+
+.aa_cs-header {
+
+  // Launch landing page
+  &.hero-height {
+    height: 300px;
+    @include breakpoint(medium) { height: 475px; }
+  }
+
+  .aa_post-title-wpr,
+  .aa_post-title p,
+  .aa_post-title { max-width: 800px }
+
+  h1 {
+    @include font-styling(#fff, 32px, 40px);
+    font-weight: 200 !important;
+  }
+
+  p.p1 {
+    @include font-styling(#fff, 28px, 32px);
+    font-weight: 200 !important;
+  }
+
+  .aa_vc-btn button { padding: 4px 32px !important; }
+
+  .aa_post-title-wpr span {
+    font-size       : 13px !important;
+    font-weight     : 600;
+    letter-spacing  : 1.25px;
+    text-transform  : uppercase;
+    font-weight: 600 !important;
+  }
+}
+
+.aa_cs-speakers {
+  .vc_gitem-zone-mini{
+    position: absolute !important;
+    background-color: $img-overlay-bg;
+  }
+}
+
+.aa_event-reg-form {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid #9b9b9b;
+}
+
+
+// ----- Agile2016  -----
+
+// Splash Page
+.aa_agile2016-splash {
+  margin-left:-15px;
+  margin-right:-15px;
+
+  position: relative;
+  height: 100vh;
+  margin-top: -75px;
+
+  background: #557595; /* Old browsers */
+  background: -moz-linear-gradient(top,  #557595 1%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #557595 1%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #557595 1%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#557595', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.aa_splash-logo img {
+  width: 5.25em;
+
+  @include breakpoint(medium) { width: 4.25em; }
+}
+
+.aa_splash-page-content {
+  @include center-center;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.aa_splash-title {
+
+  h1 {
+    @include font-styling(#fff, 32px, 40px);
+  }
+}
+
+.aa_splash-sub-title {
+  margin-bottom: 1.8em;
+
+  h4 {
+    @include font-styling(#fff, 18px, 24px);
+    font-weight: 200 !important;
+
+    span { margin: 0 .5em; }
+  }
+}
+
+.aa_splash-description {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 1.8em;
+
+  p {
+    @include font-styling(#fff, 16px, 22px);
+    font-weight: 200 !important;
+  }
+}
+
+.aa_splash-btn {
+  padding: 5px 20px !important;
+
+  &.aa_border-yellow-alt { color: #fff !important; }
+}

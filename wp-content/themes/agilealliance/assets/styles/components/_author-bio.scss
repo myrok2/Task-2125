@@ -1,0 +1,23 @@
+.aa-author-bio__content {
+  padding-left: 25px;
+}
+
+// ---- Accordion arrow animation ----
+.aa-author-bio__link {
+  .Defaults-angle-up {
+    display: inline-block;
+    transition: transform .2s ease-in-out;
+    &.is-left {
+      margin-right: 9px;
+    }
+    &.is-right {
+      margin-left: 9px;
+    }
+  }
+
+  &.collapsed {
+    .Defaults-angle-up {
+      transform: rotate(-180deg);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+// Hide the "base" widget on profile pages from front end
+.bp-widget.base {
+    display: none;
+}

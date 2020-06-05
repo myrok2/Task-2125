@@ -1,0 +1,66 @@
+{
+    "key": "group_564152f1d27a8",
+    "title": "Videos",
+    "fields": [
+        {
+            "key": "field_56ba441de921e",
+            "label": "Vimeo Video ID",
+            "name": "vimeo_video_id",
+            "type": "text",
+            "instructions": "Enter only the Vimeo Video ID. Example: 154765334\r\nYou can get this from the URL.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56ba4485e921f",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "Description if applicable.   (Connect speakers to user accounts on the right)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aa_video"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1537368659
+}

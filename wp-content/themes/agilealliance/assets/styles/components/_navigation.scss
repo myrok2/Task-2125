@@ -1,0 +1,278 @@
+$section-colors: (
+  1: $brand-blue-light, // agile-101
+  2: $brand-purple, // resources
+  3: $brand-yellow, // events
+  4: $brand-orange, // community
+  5: $brand-blue-dark, // the-alliance
+  6: $brand-green-sea // membership
+);
+.primary-navigation {
+  margin-top: 0;
+  margin-bottom: 0;
+  .open .dropdown-indicator {
+    transform: rotate(180deg);
+  }
+  > li > a { // Top level menu items
+    font-size: 18px;
+    color: $nav-dark-coal;
+    transition: color .2s ease-in-out;
+    background-color: transparent !important;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+    @include breakpoint('lg-and-below') {
+      font-size: 15px;
+    }
+  }
+  .dropdown-menu {
+    background-color: $brand-grey-dark !important;
+    border-radius: 0;
+    > li > a { // Second level menu items
+      font-size: 16px;
+      font-weight: 200;
+      color: white !important;
+      transition: color .2s ease-in-out;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+      &:hover {
+        color: transparentize(white, 0.35) !important;
+      }
+    }
+    .active > a {
+      background-color: $nav-coal;
+      &:hover {
+        background-color: $nav-coal;
+      }
+    }
+  }
+  @include header-expanded { // Used on larger screens (navbar variant with hover-activated dropdowns in this state)
+    // Hide the overview links added via JS if the browser supports hover
+    .no-touch & .menu-item--overview-link {
+      display: none;
+    }
+    > li,
+    .dropdown-menu > li {
+      .dropdown-menu {
+        display: block;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        > li > a { // Second level menu items
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        > li.menu-item-has-children > a {
+          padding-right: 35px;
+
+          &::before {
+            @include font-icon-fa(15px);
+            color: white;
+            content: '\f105'; // fa-angle-right
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+            top: 6px;
+          }
+
+          &::after {
+            display: none; // Removing inherited pseudo element.
+          }
+        }
+      }
+      &:hover {
+        > a:after {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        > .dropdown-menu {
+          opacity: 1;
+          z-index: $zindex-navbar;
+          pointer-events: inherit;
+        }
+      }
+      > a { // Top level menu items
+        padding: 30px 20px;
+        &:after {
+          bottom: 0;
+          left: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-width: 10px;
+          margin-left: -10px;
+          transform: translateY(11px);
+          transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+          opacity: 0;
+        }
+      }
+    }
+    .dropdown-indicator { display: none; }
+
+    &>li:last-child .dropdown-menu>li.menu-item-has-children .dropdown-menu { // Forcing top nav's last dropdown's submenus to open to the left of the dropdown i/o right (standard) ...to avoid it breaking out of the viewport.
+      left: auto; // Reset
+      right: 100%; // Reposition
+    }
+
+    li.menu-item-has-children.menu-item-object-page { // Third level menu parent
+      position: relative;
+    }
+
+    .dropdown-menu > li.menu-item-has-children .dropdown-menu { // Third level menu overrides
+      background-color: #555 !important;
+      border-width: 0;
+      left: 100%;
+      margin-left: -1px; // Adjusting for parent border offset
+      margin-top: -5px; // Adjusting for container padding
+      top: 0;
+    }
+  }
+  @include header-collapsed { // Used on smaller screens (nav is hamburger menu toggle in this state)
+    > li {
+      > a { // Top level menu items
+        padding-top: 18px;
+        padding-bottom: 18px;
+        .dropdown-indicator {
+          color: white;
+          width: 26px;
+          height: 26px;
+          line-height: 26px;
+          margin-top: -3px;
+          border-radius: 100%;
+          display: inline-block;
+          text-align: center;
+          float: right;
+          transition: transform .2s ease-in-out;
+        }
+      }
+    }
+    .open .dropdown-menu >li > a { // Second level menu items
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    
+    .open .menu-item-has-children:not(.menu-item--overview-link) .dropdown-menu { // Third level menu items (not: used to avoid displaying duplicate nav output)
+      display: block;
+
+      > li > a { // Third level links
+        background-color: rgba(255,255,255,0.05) !important;
+        padding: 12px 10px 12px 35px;
+      }
+    }
+  }
+  //@each $nth-child, $section-color in $section-colors {
+  //  > li:nth-child(#{$nth-child}) {
+  //    &.active > a {
+  //      color: $section-color;
+  //    }
+  //    &:hover {
+  //      > a:after {
+  //        border-bottom-color: $section-color;
+  //      }
+  //    }
+  //    > a {
+  //      &:hover {
+  //        color: $section-color;
+  //      }
+  //      .dropdown-indicator {
+  //        background-color: $section-color;
+  //      }
+  //    }
+  //    > .dropdown-menu {
+  //      border-top: 4px solid $section-color;
+  //    }
+  //  }
+  //}
+}
+
+// Custom Styles for the "Secondary Menu's
+.aa_sub-menu-wpr {
+  margin-bottom: 0;
+}
+.aa_sub-menu {
+  display: block;
+  background-color: $sub-menu-bg;
+  margin: 0 -15px;
+  margin-bottom: 0 !important;
+
+  ul {
+    display: table;
+    margin: 0 auto;
+
+    @media screen and (max-width: 767px){
+      text-align: center;
+    }
+
+    li {
+      display: table-cell;
+      text-align: center;
+
+      @media screen and (max-width: 767px){
+        display: inline-block;
+        &:before {
+          display: none !important;
+        }
+        a {
+          vertical-align: sub;
+        }
+      }
+
+
+      // Current page state
+      &.active {
+        border-top: 4px solid transparent;
+
+        &.hvr-overline-reveal:before { height: 0px; }
+        a { color: #fff; }
+      }
+
+      a:hover { color: #fff !important; }
+
+      // ----- Add top-level class name to WP-Menu
+      //       for active/hover top border color  -----
+      &.agile101    {
+        @include top-nav-hover($brand-blue-light);
+        &.active { border-top-color: $brand-blue-light; }
+      }
+
+      &.resources    {
+        @include top-nav-hover($brand-purple);
+        &.active { border-top-color: $brand-purple; }
+      }
+
+      &.events       {
+        @include top-nav-hover($brand-yellow);
+        &.active { border-top-color: $brand-yellow; }
+      }
+
+      &.community    {
+        @include top-nav-hover($brand-orange);
+        &.active { border-top-color: $brand-orange; }
+      }
+
+      &.the-alliance {
+        @include top-nav-hover($brand-blue-dark);
+        &.active { border-top-color: $brand-blue-dark; }
+      }
+
+      a {
+        text-decoration: none;
+        @include font-styling($brand-grey-light, 14px, 20px);
+        font-weight: 200 !important;
+        @include transition-std(all);
+        padding: 10px .75em;
+        width: 100%;
+        display: inline-block;
+
+        &:hover { color: #fff; }
+      }
+    }
+  }
+}

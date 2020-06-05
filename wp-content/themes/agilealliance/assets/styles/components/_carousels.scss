@@ -1,0 +1,719 @@
+//
+// Carousels
+// --------------------------------------------------
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Sass Bootstrap */
+
+// Primary Carousel   (carousel-all)
+
+.resource-carousel {
+
+  .slick-item {
+
+    .resource-card, .event-card {
+      // height: 320px;
+      //margin: auto 10px;
+      position: relative;
+      background: #ffffff;
+      border-top: 5px solid;
+      overflow: hidden;
+      overflow-style: auto;
+
+      .card-top {
+        .card-image-wrap {
+          padding: 0;
+          //height: 135px;
+          //height: auto;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            // min-height: 185px;
+            height: auto;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .card-bottom {
+        box-sizing: border-box;
+        padding: 15px 30px;
+        border-left: 1px solid $accent-hr;
+        border-right: 1px solid $accent-hr;
+        height: 185px;
+
+        @include breakpoint(medium) { padding: 30px; }
+
+        .card-post-title {
+          @include font-styling($base-text, 18px, 24px);
+          @include breakpoint(medium) { @include font-styling($base-text, 16px, 24px); }
+          // font-size: 16px;
+          // font-weight: 400;
+          text-decoration: inherit;
+          // color: inherit;
+          overflow: hidden;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          // line-height: 20px;
+          // max-height: 40px;
+        }
+
+        .card-post-title h4 { margin-bottom: 0; }
+        .card-post-title h4 a {
+          @include font-styling($base-text, 18px, 24px);
+
+          @include breakpoint(medium) { @include font-styling($base-text, 15px, 20px); }
+        }
+
+        .card-post-date p,
+        .card-post-author,
+        .card-event-dates p {
+          font-family: 'sofia-pro', sans-serif !important;
+          font-size: 13px;
+          font-weight: 200 !important;
+          color: $base-text-light;
+        }
+
+        .card-post-author a {
+          @include font-styling($base-text-light, 14px, 24px);
+
+          @include breakpoint(medium) { @include font-styling($base-text-light, 12px, 20px); }
+          @include breakpoint(large) { @include font-styling($base-text-light, 11px, 20px); }
+
+        }
+
+        .card-bottom-details {
+          position: absolute;
+          bottom: 20px;
+
+          @include breakpoint(medium) { bottom: 30px; }
+
+          .card-post-category {
+            display: block;
+            float: left;
+
+            a {
+              padding: 2px 12px;
+              font-family: 'sofia-pro', sans-serif !important;
+              font-size: 12px;
+              font-weight: 200;
+              border-radius: 30px;
+              background-color: transparent;
+              text-decoration: inherit;
+              color: $brand-grey-light;
+
+              // The Alliance
+              &.aa_organizations,
+              &.aa_initiative { @include btn-alt( $brand-blue-dark ); }
+
+                // Events
+              &.aa_event_session { @include btn-alt( $brand-yellow ); }
+
+                // Community
+              &.aa_community_groups,
+              &.aa_affiliate { @include btn-alt( $brand-orange ); }
+
+              // Resources
+              &.post,
+              &.aa_book,
+              &.aa_story,
+              &.aa_video,
+              &.aa_podcast,
+              &.aa_research_paper,
+              &.aa_speaker_directory,
+              &.aa_experience_report,
+              &.aa_glossary { @include btn-alt( $brand-purple ); }
+            }
+          }
+
+          .card-post-date {
+            right: 35px;
+            position: fixed;
+
+            p {
+              display: inline-block;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+    }
+    .event-card {
+      max-width: 600px;
+    }
+  }
+
+  /* Dots */
+
+  .slick-dots {
+    // bottom: -55px;
+    padding-top: 1.5em;
+
+    li {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
+
+      button {
+        border: 2px solid;
+        border-color: $brand-grey-light;
+        border-radius: 50%;
+        background-color: $brand-grey-light;
+        width: 10px;
+        height: 10px;
+        padding: 3px;
+
+        &:hover, &:focus {
+          border-color: #ffffff;
+          background-color: transparent;
+
+          &:before {
+            height: 20px;
+            width: 20px;
+          }
+        }
+        &:before {
+          content: '';
+        }
+      }
+      &.slick-active button {
+        border-color: #ffffff;
+        background-color: transparent;
+      }
+    }
+  }
+}
+/* Close of .resource-carousel */
+
+/* Styles Unique to Recent Resources Carousel */
+
+#recent-resources {
+  .slick-slider {
+    margin-bottom: 50px;
+  }
+
+  #slick-recent-resources {
+    //height: 350px;
+    @include breakpoint (medium) { height: auto; }
+  }
+
+  .resource-carousel {
+    .slick-item {
+      .resource-card {
+
+        border-top-color: $brand-purple;
+
+        // The Alliance
+        &.aa_organizations,
+        &.aa_initiative { border-top-color: $brand-blue-dark; }
+
+          // Events
+        &.aa_event_session { border-top-color: $brand-yellow; }
+
+          // Community
+        &.aa_community_groups,
+        &.aa_affiliate { border-top-color: $brand-orange; }
+
+        // Resources
+        &.post,
+        &.aa_book,
+        &.aa_story,
+        &.aa_video,
+        &.aa_podcast,
+        &.aa_research_paper,
+        &.aa_speaker_directory,
+        &.aa_experience_report,
+        &.aa_glossary { border-top-color: $brand-purple; }
+
+        .card-bottom {
+          .card-post-date p,
+          .card-post-author {
+            color: $base-text-light;
+          }
+
+          .card-bottom-details {
+            .card-post-category {
+              a {
+                border: 1px solid transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* Recent Resources Dots */
+
+    .slick-dots {
+      padding-top: 1.5em;
+
+      li {
+
+        button {
+          border-color: $brand-grey-light;
+          background-color: $brand-grey-light;
+
+          &:hover, &:focus {
+            border-color: $brand-purple;
+            background-color: transparent;
+          }
+        }
+        &.slick-active button {
+          border-color: $brand-purple;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  /* Close of #resource-carousel */
+}
+/* Styles Unique to Upcoming Events Carousel */
+
+#upcoming-events {
+  margin: 0 auto;
+  //max-width: 1180px;
+
+  .slick-slider {
+    margin-bottom: 50px;
+  }
+
+  .resource-carousel {
+    .slick-item {
+
+      .event-card {
+        height: 335px;
+        border-top-color: $brand-yellow;
+
+        .card-top {
+          .card-image-wrap {
+            padding: 0;
+            height: 145px;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+        .card-bottom {
+          height: 150px;
+          padding: 40px 0 0 0;
+
+          // .event-r-border,
+          // .event-info-right { width: 100%; }
+
+          // @include breakpoint(medium) {
+          //   .event-r-border,
+          //   .event-info-right { width: 50%; }
+          // }
+
+          .event-r-border{
+            border-right: 1px solid rgba(155, 155, 155, 0.2);
+          }
+
+          .card-event-dates{
+            color: $base-text-light;
+            padding-top: 10px;
+            padding-bottom: 1em;
+          }
+          .card-event-dates p {
+            @include rem(font-size, 28px);
+            @include rem(line-height, 38px);
+            text-align: center;
+          }
+          .card-post-title{
+            padding-top: 1px;
+            text-transform: uppercase;
+            color: $brand-grey-dark;
+            @include rem(font-size, 18px);
+            @include rem(line-height, 25px);
+          }
+
+          .card-event-venue{
+            padding-top: 10px;
+            color: $brand-grey-light;
+            @include rem(font-size, 12px);
+            @include rem(line-height, 16px);
+          }
+          .card-event-location{
+            padding-top: 10px;
+            color: $brand-grey-light;
+            @include rem(font-size, 10px);
+            @include rem(line-height, 13px);
+          }
+        }
+
+        // Events right text-card
+        .event-info-right .card-post-title h4 a {  @include font-styling($base-text, 12px, 18px); }
+      }
+    }
+
+    .slick-slide{
+      img{
+        width: 285px;
+      }
+    }
+
+    .slick-current{
+      .event-card {
+
+        .card-top {
+          .card-image-wrap {
+
+            img {
+            }
+          }
+        }
+        .card-bottom {
+          .card-event-dates p {
+            @include rem(font-size, 28px);
+            @include rem(line-height, 38px);
+          }
+          .card-post-title{
+            font-size: 24px;
+            font-weight: medium;
+            line-height: 33px;
+          }
+
+          // Events right text-card
+          .event-info-right .card-post-title h4 a {  @include font-styling($base-text, 18px, 36px); }
+
+          .card-event-venue{
+            font-size: 16px;
+          }
+          .card-event-location{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    /* Upcoming Events Dots */
+
+    .slick-dots {
+      padding-top: 1.5em;
+
+      li {
+
+        button {
+          border-color: #ffffff;
+          background-color: #ffffff;
+
+          &:hover, &:focus {
+            border-color: $brand-yellow;
+            background-color: transparent;
+          }
+        }
+        &.slick-active button {
+          border-color: $brand-yellow;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  /* Close of #resource-carousel */
+}
+/* Close of #upcoming-events */
+
+#organization-members{
+/* Styles Unique to the Organizations / Corp Members (Logo) Carousel */
+
+  .slick-item {
+    height: 65px;
+  }
+
+  .logo{
+    max-width: 195px;
+
+    a{
+      img{
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  /* Organization/Corp Member Dots */
+
+  .slick-dots {
+    padding-top: 1.5em;
+    // bottom: -35px;
+
+    li {
+
+      button {
+        border-color: #000;
+        background-color: #000;
+        opacity: .2;
+
+        &:hover, &:focus {
+          opacity: 1;
+          border-color: $brand-grey-light;
+          background-color: transparent;
+        }
+      }
+      &.slick-active button {
+        opacity: 1;
+        border-color: $brand-grey-light;
+        background-color: transparent;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 600px){
+  @include rem-baseline(110%);
+  .resource-carousel {
+
+    .slick-item {
+
+      .resource-card, .event-card {
+        margin: auto 15px;
+
+      }
+    }
+  }
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  @include rem-baseline(120%);
+  .resource-carousel {
+
+    .slick-item {
+
+      .resource-card, .event-card {
+        margin: auto 15px;
+
+        .card-top {
+          .card-image-wrap {
+
+            img {
+            }
+          }
+        }
+
+        .card-bottom {
+          padding: 10px;
+
+
+          .card-post-date p,
+          .card-post-author,
+          .card-event-dates p {
+            font-size: 13px;
+            font-weight: 200 !important;
+            color: $base-text-light;
+          }
+
+          .card-bottom-details {
+
+
+            .card-post-date {
+              float: right;
+              margin-right: 0;
+
+              p {
+
+              }
+            }
+          }
+        }
+      }
+      .event-card {
+        max-width: 600px;
+      }
+    }
+
+    /* Dots */
+
+    .slick-dots {
+      // bottom: -55px;
+
+      li {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+
+        button {
+          border: 2px solid;
+          border-color: $brand-grey-light;
+          border-radius: 50%;
+          background-color: $brand-grey-light;
+          width: 10px;
+          height: 10px;
+          padding: 3px;
+
+          &:hover, &:focus {
+            border-color: #ffffff;
+            background-color: transparent;
+
+            &:before {
+              height: 20px;
+              width: 20px;
+            }
+          }
+          &:before {
+            content: '';
+          }
+        }
+        &.slick-active button {
+          border-color: #ffffff;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  @include rem-baseline(130%);
+
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  @include rem-baseline(140%);
+
+}
+
+/* Extra Large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Styles Unique to Upcoming Events Carousel */
+
+  #slick-upcoming-events {
+    max-width: 1215px;
+    margin: 0 auto;
+
+    .slick-item {
+
+      .event-card {
+        width: 285px !important;
+        max-width: 285px;
+        height: 335px;
+
+        .card-top {
+          .card-image-wrap {
+            padding: 0;
+            height: 180px;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+        .card-bottom {
+
+          .card-event-dates p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .slick-slide.slick-active{
+      width: 285px !important;
+      margin-left: 15px;
+
+      .event-card{
+        .card-bottom{
+          .card-event-dates p {
+            @include font-styling($base-text, 14px, 24px);
+          }
+          .card-post-title h4 {
+
+            @include font-styling($base-text, 16px, 24px);
+            font-size: 14px;
+            line-height: 18px;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            // max-width: 100px;
+          }
+
+          .card-event-venue{
+            padding-top: 0px;
+            font-size: 14px;
+          }
+          .card-event-location{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .slick-slide.slick-current{
+      width: 600px !important;
+      margin-left: 0px;
+
+      .event-card {
+        width: 600px !important;
+        max-width: 600px !important;
+
+        .card-top {
+          .card-image-wrap {
+
+          }
+        }
+        .card-bottom {
+          .card-event-dates p {
+            font-size: 36px;
+          }
+          .card-post-title h4 {
+            @include font-styling($base-text, 24px, 32px);
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            // max-width: 300px;
+          }
+          .card-event-venue{
+            // padding-top: 10px;
+            font-size: 16px;
+          }
+          .card-event-location{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  #upcoming-events .resource-carousel .slick-item .event-card .card-bottom {
+    // Force event information top padding to shrink when on large desktop.
+    padding: 20px 0 0 0;
+  }
+
+  #upcoming-events .resource-carousel .slick-active .event-card .card-bottom .event-r-border {
+    // Super slick way to tweak only the active slick items event date column width - har har har
+    width: 40%;
+  }
+
+  #upcoming-events .resource-carousel .slick-current .event-card .card-bottom .event-r-border {
+    // Now lets restore the "slick-current" card to normal 50% width - derp
+    width: 50%;
+  }
+
+  #upcoming-events .resource-carousel .slick-current .event-card .card-bottom .event-info-right {
+    padding-left: 30px;
+
+    h4 { margin-top: 0; }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

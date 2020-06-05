@@ -1,0 +1,37 @@
+# Copyright (C) 2014 Agile Alliance
+# This file is distributed under the same license as the Agile Alliance package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Agile Alliance Quotes 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/WordPress-Plugin-Template\n"
+"POT-Creation-Date: 2014-04-07 11:28:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#. Plugin Name of the plugin/theme
+msgid "Agile Alliance Quotes"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.fisudio.com/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Shawn K Finn"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.shawnkfinn.com/"
+msgstr ""
+
+#: Widget Title
+msgid "Agile Alliance Quotes"
+msgstr ""
+
+#: Widget Description
+msgid "Random Quotes for the Agile Alliance header image areas."
+msgstr ""

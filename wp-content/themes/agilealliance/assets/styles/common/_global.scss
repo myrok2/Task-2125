@@ -1,0 +1,159 @@
+//
+// Global
+// --------------------------------------------------
+
+
+html,
+body { -webkit-overflow-scrolling: touch; }
+
+a:focus { outline: none; }
+
+.page-header {
+  padding-bottom: 30px;
+  border-bottom: 2px solid #979797;
+  margin-top: 60px;
+
+  h1 {
+    // margin-bottom: 60px;
+  }
+}
+
+// ----- Resets  -----
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// ----- Bootstrap overrides -----
+
+.no-pad{
+  padding: 0 !important;
+}
+
+.no-pad-left{
+  padding-left: 0 !important;
+}
+
+.no-pad-right{
+  padding-right: 0 !important;
+}
+
+.form-control {
+  font-size: inherit;
+  height: auto;
+}
+
+// ----- Input border override -----
+.form-control:focus {
+  border-color: #ccc;
+  box-shadow: none;
+}
+
+// ----- Sitemap -----
+ul.sitemap {
+   list-style-type: disc;
+   list-style-position: inside;
+}
+ol.sitemap {
+   list-style-type: decimal;
+   list-style-position: inside;
+}
+ul.sitemap ul, ol.sitemap ul {
+   list-style-type: circle;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+ol.sitemap ol, ul.sitemap ol {
+   list-style-type: lower-latin;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+
+// ----- Misc Stuff  -----
+
+// Accent HR
+.accent-hr {
+  width: $accent-hr-width;
+  margin-bottom: 1.5em;
+}
+
+.modal .modal-content{ border-radius: 0; }
+
+// Removes clearing and reveal IE inputs
+input[type="text"]::-ms-clear{ display: none; }
+input[type="email"]::-ms-clear{ display: none; }
+input[type="password"]::-ms-reveal{ display: none; }
+
+// Removes IE select control icon
+select::-ms-expand { display: none; }
+
+// Removes default input[type="number"] spinner controls
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Image overlay
+.aa_img-overlay {
+  // background-color: $base-border-dark;
+  background-color: $img-overlay-bg;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+// Image overlay - VC
+.image-bg-block-wpr,
+.hero-height {
+  > .vc_column-inner > .wpb_wrapper:first-of-type {
+    @extend .aa_img-overlay;
+  }
+
+  > .vc_column-inner { height: 100%; }
+}
+
+.image-bg-block-wpr {
+  height: 18em;
+  @include breakpoint(medium) { height: 390px; }
+}
+
+// No image overlay - VC
+.hero-height.aa_no-img-overlay > .vc_column-inner > .wpb_wrapper:first-of-type {
+  background-color: transparent;
+}
+
+// VC Overides
+.vc_column-inner { padding-top: 0 !important; }
+.uvc-heading.ult-adjust-bottom-margin { margin-bottom: 1em !important; }
+.aa_unordered-list-padding ul {
+  -webkit-padding-start: 40px;
+  padding-left: 40px;
+}
+
+// ----- Override for VC Popup Noifications plugin  ----- //
+footer + .vc_row { margin: 0; }
+
+// Center Class we can toss on objects //
+.margin-zero-auto {
+  margin: 0 auto !important;
+}

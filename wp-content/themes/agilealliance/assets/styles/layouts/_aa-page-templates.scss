@@ -1,0 +1,11 @@
+.aa-layout {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1080px;
+  &--narrow {
+    max-width: 800px;
+  }
+  &--wide {
+    max-width: 1280px;
+  }
+}

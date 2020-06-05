@@ -1,0 +1,19 @@
+{
+    "name": "352inc/aa-invites",
+    "description": "Agile Alliance invites must use plugin",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Magbic Aleman",
+            "email": "maleman@352inc.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files" : ["src/gravity-form-hook.php", "src/gform-hook-request-invite.php"],
+        "psr-4" :{
+            "AgileAlliance\\Invites\\" : "src/"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "key": "group_593050d37bc75",
+    "title": "Videos on Event Sessions Page",
+    "fields": [
+        {
+            "key": "field_593050d389a77",
+            "label": "Vimeo Video ID",
+            "name": "vimeo_video_id",
+            "type": "text",
+            "instructions": "Enter only the Vimeo Video ID. Example: 154765334\r\nYou can get this from the URL.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aa_event_session"
+            }
+        ]
+    ],
+    "menu_order": -44,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1537447113
+}

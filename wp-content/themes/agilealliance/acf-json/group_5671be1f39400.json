@@ -1,0 +1,106 @@
+{
+    "key": "group_5671be1f39400",
+    "title": "Events Carousel Info",
+    "fields": [
+        {
+            "key": "field_5671be2534374",
+            "label": "Event Date or Range",
+            "name": "event_date_range",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5671c1958ce1c",
+            "label": "Carousel Venue",
+            "name": "carousel_venue_display",
+            "type": "text",
+            "instructions": "Enter facility to display on the home page events carousel.  If left blank - none will show.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5671be7234375",
+            "label": "Carousel Location",
+            "name": "carousel_location_display",
+            "type": "text",
+            "instructions": "Enter desired location to display on the home page events carousel.  If left blank - none will show.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5671ca84ba049",
+            "label": "Carousel Link Designation",
+            "name": "carousel_link_designation",
+            "type": "page_link",
+            "instructions": "IE: Specific Event Landing Page",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "allow_archives": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1537284973
+}

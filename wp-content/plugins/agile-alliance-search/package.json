@@ -1,0 +1,6 @@
+{
+  "name": "agile-alliance-search",
+  "version": "1.0.0",
+  "description": "Offload search indexing and provide a frontend UI for viewing results",
+  "author": "352 Inc."
+}

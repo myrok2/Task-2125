@@ -1,0 +1,70 @@
+//
+// Community Page
+// --------------------------------------------------
+
+.community {
+
+  .community-header {
+    text-align: center;
+
+    @include section-padding;
+
+    h1 {
+      color: $base-text-dark;
+      @include font-std(36px);
+    }
+
+    hr {
+      width: 8%;
+      border-color: $accent-hr;
+    }
+
+    h2 {
+      color: $base-text-light;
+      @include font-std(33px);
+    }
+  }
+
+  .community-navbar {
+    background-color: whitesmoke;
+
+    @include font-std(18px);
+
+    ul {
+      display: table;
+      margin: 0 auto;
+      width: 40%;
+
+      li {
+        display: table-cell;
+        text-align: center;
+
+        &.groups:before { background: $brand-orange; }
+        &.blog:before { background: $brand-orange; }
+        &.translation-program:before { background: $brand-orange; }
+
+        &.isActive:before {
+          transform: translateY(0);
+        }
+
+        .community-navbar-links {
+          text-decoration: none;
+          color: $base-text-light;
+
+          padding: 10px 0;
+          width: 100%;
+          display: inline-block;
+
+          min-width: 125px;
+
+          @include transition-std(all);
+
+          &:hover,
+          &:focus {
+            color: $base-text;
+          }
+        }
+      }
+    }
+  }
+}

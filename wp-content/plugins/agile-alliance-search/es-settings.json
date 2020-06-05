@@ -1,0 +1,41 @@
+{
+  "analysis": {
+    "analyzer": {
+      "basic_ngram": {
+        "tokenizer": "basic_ngram_tokenizer"
+      },
+      "ducet_sort": {
+        "tokenizer": "keyword",
+        "char_filter": [
+          "strip_quotes"
+        ],
+        "filter": [
+          "trim",
+          "icu_collation"
+        ]
+      }
+    },
+    "char_filter": {
+      "strip_quotes": {
+        "type": "mapping",
+        "mappings": [
+          "\" => ",
+          "“ => ",
+          "[ => ",
+          "# => "
+        ]
+      }
+    },
+    "tokenizer": {
+      "basic_ngram_tokenizer": {
+        "type": "ngram",
+        "min_gram": 3,
+        "max_gram": 3,
+        "token_chars": [
+          "letter",
+          "digit"
+        ]
+      }
+    }
+  }
+}

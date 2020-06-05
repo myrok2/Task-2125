@@ -1,0 +1,1306 @@
+// ----- Page Overlay  -----
+.global-page-overlay {
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255,255,255, 0.985);
+  // background-color: green;
+}
+
+// ----- Search results page Search Form  -----
+
+body.search-modal-visible {
+  overflow: hidden;
+}
+
+#ajaxsearchpro1_2 .probox .proloading .asp_loader div {
+  height: 25px !important;
+  width: 25px !important;
+}
+
+#ajaxsearchpro1_2 .probox .promagnifier div.innericon.hiddend {
+  display: block !important;
+}
+
+#ajaxsearchprores1_1 .results .item .asp_content h3 a,
+#ajaxsearchprores1_2 .results .item .asp_content h3 a,
+div.ajaxsearchpro[id*="ajaxsearchprores1_"] .results .item .asp_content h3 a,
+#ajaxsearchprores1_1 .results .item div.asp_content,
+#ajaxsearchprores1_2 .results .item div.asp_content,
+div.ajaxsearchpro[id*="ajaxsearchprores1_"] .results .item div.asp_content {
+  font-family: sofia-pro, sans-serif !important;
+}
+
+.aa_search-form {
+
+  &.global {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: 0.3s opacity ease-out;
+    .search-modal-visible & {
+      top: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: 1002;
+    }
+  }
+
+  .input-group-btn button { display: none; }
+
+  .aa_content-search,
+  .form-inline {
+    position: relative;
+    width: 100%;
+
+    label {
+      color: $base-text-light;
+      letter-spacing: 1px;
+    }
+
+    input {
+      outline: none;
+      height:auto;
+
+      font-size: 24px;
+      color: $brand-dark;
+
+
+      &.aa_search-results-input {
+        border: 1px solid $base-text-light;
+        border-radius: 30px;
+
+        padding: 10px 20px 10px 45px;
+      }
+
+      // Placeholder styling
+      &::-webkit-input-placeholder { color: $brand-dark; }
+      &::-moz-placeholder { color: $brand-dark; }
+      &:-ms-input-placeholder { color: $brand-dark; }
+    }
+
+    .search-bar-accent {
+      font-size: 16px;
+      color: $base-text-light;
+
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+
+// ----- Overlay Search Form  -----
+.search-form.isOverlaid {
+  position: fixed;
+  top: 60px;
+  z-index: 9998;
+
+  width: 100%;
+
+  // .input-group input:-webkit-autofill {
+  //  background-color: red !important;
+  //  background-image: none !important;
+  // }
+
+
+  // .input-group-btn button { display: none; }
+
+  .input-group {
+    width: 85%;
+    margin: 0 auto;
+
+    display: block;
+
+    position: relative;
+
+    @include breakpoint(medium) { width: 70%; }
+
+    label {
+      @include font-styling($base-text-light, 18px, 24px);
+      font-weight: 200 !important;
+      // font-weight: 600 !important;
+      // color: $base-text-light;
+      letter-spacing: 1px;
+      position: absolute;
+      top: .7em;
+      left: 1.8em;
+
+      @include breakpoint(medium) {
+        @include font-styling($base-text-light, 22px, 24px);
+        top: .45em;
+      }
+
+      @include breakpoint(large) { @include font-styling($base-text-light, 24px, 24px); }
+
+      @include transition-std(all);
+
+      &.isFocus {
+        top: -2.5em;
+        left: 5px;
+        @include font-styling($base-text-light, 16px, 20px);
+        font-weight: 600 !important;
+      }
+    }
+
+    input {
+      outline: none;
+      height:auto;
+      background-color: transparent; // Required to see the label as placeholder
+
+      // @include font-std(36px);
+      @include font-styling($base-text, 24px, 48px);
+      font-weight: 200 !important;
+
+      // color: $base-text;
+
+      // padding: 40px 20px 40px 60px;
+      // padding-top: 1.5em;
+      // padding-bottom: .3em;
+      padding: 0;
+      padding-left: 1.5em;
+
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+
+      border-bottom: 1px solid $base-text-light;
+
+
+      // Placeholder styling
+      &::-webkit-input-placeholder { color: $base-text-light; }
+      &::-moz-placeholder { color: $base-text-light; }
+      &:-ms-input-placeholder { color: $base-text-light; }
+    }
+
+    .search-bar-accent {
+      position: absolute;
+      top: 1.55em;
+      left: 3px;
+      z-index: 9999;
+      @include font-styling($base-text-light, 16px, 24px);
+
+      @include breakpoint(medium) {
+        @include font-styling($base-text-light, 20px, 24px);
+        top: 1.1em;
+      }
+    }
+  }
+}
+
+#search-bar-close-trigger {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+  opacity: .45;
+
+  img {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+//
+// Content search bar
+// --------------------------------------------------
+
+.aa_search-form.aa_content-search-form {
+  height: 150px;
+
+  form,
+  .row,
+  div[class^="col-"] {
+    height: 100%;
+  }
+
+  .resources-search-form-left {
+    background-color: #656565;
+    padding: 0 5%;
+
+    @include transition-std(all);
+
+    .aa_search-content-input {
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #fff;
+      box-shadow: none;
+      background: transparent;
+
+      padding-left: 1.8em !important;
+      // padding: 10px 20px 10px 45px;
+
+      width: 1px; // Don't remove
+
+      @include font-std(24px);
+      @include transition-std(all);
+
+      &::-webkit-input-placeholder { color: $base-text-light; }
+      &::-moz-placeholder { color: $base-text-light; }
+      &:-ms-input-placeholder { color: $base-text-light; }
+
+      &:focus {
+        background: transparent;
+        ~ .search-bar-accent { color: #fff; }
+      }
+
+      &:focus::-webkit-input-placeholder { color: #fff; @include transition-std(all); }
+      &:focus::-moz-placeholder { color: #fff; @include transition-std(all); }
+      &:focus:-ms-input-placeholder { color: #fff; @include transition-std(all); }
+    }
+
+    .search-bar-accent {
+      color: $base-text-light;
+      left: 8px;
+
+      font-size: 18px;
+
+      @include transition-std(all);
+    }
+  }
+
+  .resources-search-form-right { background-color: #545454; }
+
+  .aa_content-search { @include vertical-align; }
+
+  .ui.selection.dropdown,
+  .ui.upward.selection.dropdown {
+    @include vertical-align;
+    @include font-std(16px);
+
+    width: 100%;
+    min-width: auto;
+    margin-left: 0;
+
+    line-height: 36px;
+    background: transparent;
+
+    border-radius: 0 !important;
+    border: 1px solid #545454;
+    border-bottom: 2px solid #fff;
+
+    @include transition-std(all);
+
+    .text {
+      color: #fff;
+
+      &.default { color: $base-text-light; }
+    }
+
+    .aa_icon {
+      @include font-icon-fa(20px);
+      @include vertical-align-abs;
+      right: 10px;
+
+      color: #fff;
+
+      &:before { content: '\f107'; }
+    }
+
+    // Active state for Semantic-UI
+    &.active {
+      border-color: #fff;
+      background: #fff;
+      color: #fff;
+      box-shadow: none;
+
+      .aa_icon:before {
+        content: '\f106';
+        color: #000;
+      }
+    }
+
+    // Dropdown's dropdown section
+    .menu {
+      border: none;
+      border-radius: 0;
+
+      .item {
+        line-height: 36px;
+      }
+    }
+  }
+
+  .aa_search-content-submit { @include vertical-align }
+}
+
+//
+// Login Entry
+// --------------------------------------------------
+
+#global-login {
+  border-radius: 0;
+
+  text-align: center;
+
+  .modal-body .content.isLoggedIn{ padding-bottom: 40px; }
+
+  .modal-content { background-color: #FCFCFC; }
+
+  h3 {
+    color: $base-text-dark;
+    text-align: center;
+    line-height: 35px;
+
+    padding: 30px 0 0;
+
+    @include font-std(24px);
+  }
+
+  form {
+    padding: 0 15%;
+    text-align: center;
+    background-color: #FCFCFC;
+
+    label { display: none; }
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 0;
+  }
+
+  .ws-plugin--s2member-pro-login-widget-profile-summary {
+    padding-top: 50px;
+
+    a:first-of-type { display: inline-block; }
+
+  }
+
+  .ws-plugin--s2member-pro-login-widget-profile-summary-code {
+
+    h3 { padding: 0; }
+
+    @include font-std(14px);
+    color: #9B9B9B;
+    padding-bottom: 20px;
+  }
+
+  .modal-content button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .content {
+    background-color: #FCFCFC;
+
+    .ws-plugin--s2member-pro-login-widget-profile-summary-logout a {
+      @extend .aa_btn;
+      @include btn-std($brand-green);
+
+      display: inline-block;
+      line-height: normal;
+      // color: #fff;
+    }
+  }
+
+
+  .ws-plugin--s2member-pro-login-widget-username,
+  .ws-plugin--s2member-pro-login-widget-password {
+    padding: 0;
+    margin:0;
+  }
+
+  #ws-plugin--s2member-pro-login-widget-username,
+  #ws-plugin--s2member-pro-login-widget-password {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid $base-text-light;
+    box-shadow: none;
+    background-color: transparent;
+    line-height: 30px;
+
+    // margin-bottom: 20px;
+    padding-left: 0;
+
+    width: 100%;
+    display: block;
+
+    @include font-std(16px);
+
+    ::-webkit-input-placeholder { line-height: 30px }
+    :-moz-placeholder { line-height: 30px /* Firefox 18- */ }
+    ::-moz-placeholder {  line-height: 30px /* Firefox 19+ */ }
+    :-ms-input-placeholder { line-height: 30px }
+  }
+
+  .ws-plugin--s2member-pro-login-widget-lost-password {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 40px;
+
+    a {
+      text-transform: capitalize;
+      color: $brand-green;
+    }
+  }
+
+  .btn {
+    @extend .aa_btn;
+    display: inline-block;
+    width: auto;
+
+    &.btn-primary {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    padding: 25px 10px;
+    background-color: #545454;
+    color: #fff;
+
+    h3 {
+      color: #fff;
+      margin-bottom: 25px;
+      margin-top: 0;
+      padding-top: 0;
+
+      @include font-std(24px);
+      font-weight: 100;
+
+      & + a { margin-bottom: 20px }
+    }
+  }
+
+  .aa_view_organization {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  // .modal-body.isLoggedIn + .footer { display: none; }
+}
+
+//
+// Newsletter Signup
+// --------------------------------------------------
+
+input.placeholdersjs:-ms-input-placeholder {
+  color: #B6B6B6;
+}
+
+// form.mc4wp-form p.alert{ display:block !important; }
+
+#footer-newsletter-signup-form,
+.conference-newsletter-signup-form {
+  border-radius: 0;
+
+  .header {
+    border: 0;
+    //padding: 60px 0 0 !important;
+    h3 {
+      text-align: center;
+      @include font-styling($base-text-dark, 24px, 28px);
+    }
+  }
+
+  &.aa_cs-model {
+    text-align: center;
+
+    h3 {
+      margin-bottom: 1em;
+      @include font-styling($base-text-dark, 24px, 28px)
+    }
+
+    p {
+      @include font-std(18px);
+      font-weight: 200 !important;
+      margin: 0 auto;
+      max-width: 80%;
+
+      @include breakpoint(medium) { max-width: 55%; }
+    }
+  }
+
+  // .content { background-color: #FCFCFC; }
+
+  input:not(.aa_btn){
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid $base-text-light;
+    box-shadow: none;
+    background-color: transparent;
+    // line-height: 30px;
+
+    margin-bottom: 20px;
+    padding-left: 0;
+
+    width: 100%;
+    display: block;
+    @include font-styling($base-text-light, 16px, 30px);
+
+    ::-webkit-input-placeholder { line-height: 30rem }
+    :-moz-placeholder { line-height: 30rem /* Firefox 18- */ }
+    ::-moz-placeholder {  line-height: 30rem /* Firefox 19+ */ }
+    :-ms-input-placeholder { line-height: 30rem }
+  }
+
+  .modal-content button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .content {
+    // box-shadow: none;
+    //padding: 0 20% 40px;
+    text-align: center;
+
+    position: relative;
+
+    // Conference Splash
+    &.aa_conference-splash {
+      #aa_newsletter-form-email {
+        margin-bottom: 2.5em;
+      }
+
+      .aa_btn { padding: 6px 45px !important; }
+    }
+  }
+
+  .mc4wp-ajax-loader {
+    color: #fff;
+    font-size: 16px;
+    font-family: 'FontAwesome';
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    margin-top: -5px;
+    margin-left: -28px !important;
+  }
+
+  // ----- Success styling  -----
+  &.isSuccess {
+    .header h3 {
+      border-bottom: 1px solid #ddd;
+      padding: 0 0 35px;
+    }
+  }
+
+  #mc4wp-form-1.mc4wp-form-success {
+    .mc4wp-alert.mc4wp-success {
+      font-size: 1em;
+      margin: 1em 0;
+      padding: 30px 55px;
+      border-radius: 2px;
+      display: block;
+      position: relative;
+
+      color: #777777;
+      background-color: transparent;
+      border-color: #ddd;
+      border: none;
+
+      // Needed to access "close" button
+      margin-top: 60px;
+
+      span { color: $brand-green }
+    }
+  }
+}
+
+
+// Media Queries
+@include breakpoint(small) {
+  #global-login {
+    position: relative;
+  }
+
+  #footer-newsletter-signup-form {
+
+
+    // ----- Success styling  -----
+    &.isSuccess {
+      .header h3 {
+        padding: 0 0 20px;
+      }
+    }
+
+    #mc4wp-form-1.mc4wp-form-success {
+      .mc4wp-alert.mc4wp-success {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  // TEMP TRIGGER
+  .membership-temp {
+    @include vertical-align;
+    display: inline-block;
+  }
+}
+
+@include breakpoint(medium) {
+  #global-login {
+    width: 40%;
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    // right: 0;
+  }
+
+  #newsletterSignup {
+    margin-top: 100px;
+  }
+
+  #footer-newsletter-signup-form {
+    // width: 60%;
+    // margin: 0 0 0 -30%;
+  }
+
+  // TEMP Trigger
+  .membership-temp { transform: translateY(0%); }
+}
+
+@include breakpoint(large) {
+  #global-login {
+    width: 30%;
+  }
+
+  #footer-newsletter-signup-form {
+    // width: 40%;
+    // margin: 0 0 0 -20%;
+  }
+}
+
+@include breakpoint(super) {
+  #global-login {
+    width: 23%;
+  }
+
+  #footer-newsletter-signup-form {
+    // width: 50%;
+    // margin: 0 0 0 -15%;
+  }
+}
+
+
+.modal {
+
+  .modal-dialog {
+    transform: scale(0.8) !important;
+
+    @include transition-std(all);
+  }
+
+
+  &.in .modal-dialog {
+    transform: scale(1) !important;
+  }
+}
+
+
+/*--------------
+      Scale
+---------------*/
+
+.scale.transition.in {
+  -webkit-animation-name: scaleIn;
+  animation-name: scaleIn;
+}
+
+.scale.transition {
+  -webkit-animation-name: scaleOut;
+  animation-name: scaleOut;
+  transition-timing-function: ease;
+}
+
+/* In */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* In */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* Out */
+@keyframes scaleOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.fade {
+  transition: opacity 300ms ease;
+}
+
+//
+// GravityForms Registration Fields
+// --------------------------------------------------
+body .gform_wrapper.gf_browser_chrome select { width: 100% !important; }
+
+.aa_gf-wpr {
+  .vc_col-sm-8 {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint(medium) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.gform_wrapper{
+  margin: 0;
+  max-width: 100%;
+
+  .gform_heading { display: none; }
+
+  li {
+    margin-bottom: 20px;
+
+    position: relative;
+    display: block;
+
+    &[id^='field_8_'] { padding-top: 2.5em; }
+
+    &#field_8_1 {
+      padding-top: 1.3em;
+    }
+
+    &.gfield_html { padding: 0; }
+  }
+
+  li[id^="field_8_"] {
+    label {
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+
+  li#field_8_8 label,
+  li#field_8_5 label { top: 20px; }
+
+  li.gfield_error#field_8_8 label,
+  li.gfield_error#field_8_5 label { top: 25px; }
+
+  select {
+    @include forms-select();
+    margin-left: 0 !important;
+    padding: 5px 0;
+    color: $base-text;
+    line-height: 30px;
+  }
+
+  // Change color if placeholder option is selected
+  select.hasPlaceholder { color: $base-text-light; }
+
+  .gfield_label {
+    color: $brand-grey-light;
+    // font-size: 16px;
+    font-weight: 300;
+  }
+
+  #field_8_1 .gfield_label {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    opacity: 0;
+    cursor: default;
+
+    @include transition-std(all);
+
+    &.isFocus {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  .ginput_container_select {
+    position: relative;
+    padding: 0;
+
+    // select { margin-top: 1.5em !important; }
+
+    .aa_icon {
+      @include font-icon-fa(20px);
+      @include vertical-align-abs;
+      top: 75%;
+      right: 30px;
+
+      color: #000;
+
+      &:before { content: '\f107'; }
+    }
+
+    &.isActive {
+      border-color: #fff;
+      background: #fff;
+      color: #fff;
+      box-shadow: none;
+
+      .aa_icon:before {
+        content: '\f106';
+        color: #000;
+      }
+    }
+  }
+
+  .aa_gf_membership-type select { border-color: #468847; }
+
+  .ginput_container_radio li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  // Unneeded text
+  // #field_8_10 { display: none !important; }
+}
+
+//
+// s2Member Checkout Fields
+// --------------------------------------------------
+div.s2member-pro-authnet-form-description-div {  font-family: 'sofia-pro', sans-serif !important; }
+
+.aa_s2pro-membership-form,
+.aa_s2pro-registration-form,
+#s2member-pro-authnet-checkout-form,
+#s2member-pro-authnet-registration-form,
+#ws-plugin--s2member-profile {
+  padding-bottom: 75px;
+
+  .aa_s2pro-membership-form-title,
+  .s2member-pro-authnet-form-section-title {
+    background: transparent;
+    border: 0;
+
+    @include font-std(24px);
+    font-weight: 300;
+  }
+
+  input:not([type="radio"]):not([type="submit"]):not([type="button"]) { @include forms-input(); }
+  select { @include forms-select; }
+
+  select,
+  input:not([type="radio"]):not([type="submit"]) {
+    @include font-styling($base-text, 18px, 24px);
+    font-weight: 200 !important;
+    &[type="checkbox"] {
+      display: inline-block;
+      margin-bottom: 0 !important;
+      width: auto !important;
+    }
+  }
+
+  div.s2member-pro-authnet-form-section>div.s2member-pro-authnet-form-coupon-div input[type="button"] {
+    float: none;
+    width: auto;
+    @include btn-alt($brand-green);
+    font-weight: 600 !important;
+    line-height: normal;
+  }
+
+  .s2member-pro-authnet-checkout-form-card-type-div label { display: inline-block; }
+  #s2member-pro-authnet-checkout-form-country-div { margin-top: 45px; }
+
+  label {
+    display: block;
+    position: relative;
+    color: $brand-grey-light;
+    z-index: 10;
+
+    & > span:first-of-type {
+      display: inline-block;
+      position: absolute;
+      top: 25px;
+      opacity: 0;
+      cursor: default;
+      font-weight: 300;
+
+      @include transition-std(all);
+
+      &.isFocus {
+        top: 0;
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+
+    .cc-month { margin-bottom: 45px; }
+
+    &.s2member-pro-authnet-checkout-form-country-label {
+      .isFocus,
+      & + br { display: none }
+    }
+  }
+
+  #s2member-pro-authnet-checkout-password1,
+  #s2member-pro-authnet-registration-password1 { margin-bottom: 45px !important; }
+
+  #s2member-pro-authnet-checkout-password2,
+  #s2member-pro-authnet-registration-password2,
+  #ws-plugin--s2member-profile-password2 { margin-bottom: 0 !important; }
+
+  .ws-plugin--s2member-password-strength {
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 0;
+    @include font-std(12px);
+
+    &.ws-plugin--s2member-password-strength-mismatch {
+      background-color: rgb(185, 74, 72);
+      color: #fff;
+    }
+  }
+
+  #s2member-pro-authnet-checkout-form-card-number-label .form-error { display: none; }
+
+  #s2member-pro-authnet-checkout-form-card-expiration-label {
+    & > span:first-of-type,
+    & .form-error { display: none; }
+  }
+
+  // #s2member-pro-authnet-checkout-form-card-number-label {
+  //   .form-error { display: block; }
+  // }
+
+  .aa_s2pro-form-select-wpr,
+  #s2member-pro-authnet-checkout-form-country-label {
+    position: relative;
+    padding: 0;
+
+    & ~ .aa_s2pro-form-select-wpr { padding:0; }
+
+    .aa_icon {
+      @include font-icon-fa(20px);
+      @include vertical-align-abs;
+      right: 30px;
+
+      color: #000;
+
+      &:before { content: '\f107'; }
+    }
+
+    &.isActive {
+      border-color: #fff;
+      background: #fff;
+      color: #fff;
+      box-shadow: none;
+
+      .aa_icon:before {
+        content: '\f106';
+        color: #000;
+      }
+    }
+  }
+
+  .aa_s2pro-membership-form-checkout { display: none; }
+  .s2member-pro-authnet-checkout-form-submit-div { float: left; }
+
+  // Label icon
+  div.s2member-pro-authnet-form-coupon-div>label>span::before {
+    content: '';
+    margin: 0;
+  }
+}
+// ----- Profile Edit ----- //
+#ws-plugin--s2member-profile {
+  @extend .aa_vc-section-max-width;
+  //padding-top: 3.6em;
+  padding-bottom: 3.6em;
+
+  label {
+    z-index: 10;
+
+    strong,
+    small,
+    em {
+      @include font-styling($brand-grey-light, 16px, 24px);
+      font-weight: 300 !important;
+
+      @include breakpoint(medium) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  select,
+  td input:not([type=submit]) {
+    @include forms-input;
+    // font-weight: 200 !important;
+  }
+
+  select,
+  input:not([type=radio]):not([type=submit]) {
+    margin-bottom: .5em !important;
+    font-weight: 200 !important;
+  }
+
+  textarea {
+    @include forms-input;
+    line-height: 1.25em;
+    height: 2.25em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include transition-std(all);
+
+    &.isFocus {
+      height: 9.375em;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 1em !important;
+
+    @include breakpoint(medium) { width: auto !important; }
+  }
+
+  .ws-plugin--s2member-profile-field-divider-section,
+  .ws-plugin--s2member-profile-field-divider-section-title { display: none; }
+}
+
+// Kind of a hack to replace password reset labels on 'Edit Profile' view
+[for="ws-plugin--s2member-profile-password1"],
+[for="ws-plugin--s2member-profile-password2"] {
+  strong, em, br { display: none; }
+  &:before {
+    font-size: 16px;
+    font-weight: 300;
+    color: #9B9B9B;
+  }
+}
+[for="ws-plugin--s2member-profile-password1"]:before {
+  content: "To change your password, enter and confirm your password. \A Enter New Password";
+  white-space: pre;
+}
+[for="ws-plugin--s2member-profile-password2"]:before {
+  content: 'Confirm password';
+}
+
+// Avatar edit form
+.wpua-edit {
+  em {
+    font-size: 15px;
+    line-height: 0px;
+  }
+  .avatar-container {
+    margin-top: 1em !important;
+    text-align: center;
+  }
+  .button,
+  .button-secondary {
+    @extend .aa_btn;
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  .button-secondary {
+    margin-top: 0.5em;
+  }
+
+  .submit {
+    text-align: center;
+  }
+
+}
+
+// ----- Need to refactor this ----- //
+@include breakpoint(medium) {
+
+  #s2member-pro-authnet-checkout-form,
+  #s2member-pro-authnet-registration-form {
+
+    span { font-size: 16px; }
+
+    .aa_s2pro-form-select-wpr {
+      padding:0 15px 0 0;
+
+      & ~ .aa_s2pro-form-select-wpr {
+        padding:0 0 0 15px;
+      }
+
+      .aa_icon {
+        right: 42px;
+        &.right { right: 25px; }
+      }
+    }
+  }
+}
+
+#s2member-pro-authnet-checkout-form-custom-reg-field-country-code-div select { color: $brand-grey-light; }
+#s2member-pro-authnet-checkout-form-custom-reg-field-preferred-email-div select { color: $brand-grey-light; }
+
+//
+// Event Registraton Form
+// --------------------------------------------------
+
+#event-register {
+  h3 {
+    @include font-styling($base-text, 18px, 22px);
+    margin-bottom: 1em;
+  }
+
+}
+
+.tally {
+  display: inline-block;
+  background-color: #ECECEC;
+  border: 2px solid #26D975;
+  border-radius: 6px;
+  padding: 1em 2em;
+  margin-top: 2em;
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .description label {
+    font-weight: 100;
+  }
+}
+
+.aa_dropdown {
+
+  position: relative;
+
+  select,
+  .aa_fake-dropdown{
+    @include forms-select();
+    margin-left: 0 !important;
+    padding: 5px 30px 0 0;
+    color: $base-text;
+    line-height: 30px;
+  }
+
+  select.hasPlaceholder { color: $base-text-light; }
+
+  .aa_icon {
+    @include font-icon-fa(20px);
+    @include vertical-align-abs;
+    right: 10px;
+
+    color: #fff;
+
+    &:before { content: '\f107'; }
+  }
+
+  &.active {
+    border-color: #fff;
+    background: #fff;
+    color: #fff;
+    box-shadow: none;
+
+    .aa_icon:before {
+      content: '\f106';
+      color: #000;
+    }
+  }
+}
+
+input.aa_input {
+  outline: none;
+  height:auto;
+  background-color: transparent; // Required to see the label as placeholder
+
+  // @include font-std(36px);
+  @include font-styling($base-text, 24px, 48px);
+  font-weight: 200 !important;
+
+  // color: $base-text;
+
+  // padding: 40px 20px 40px 60px;
+  // padding-top: 1.5em;
+  // padding-bottom: .3em;
+  padding: 0;
+  padding-left: 1.5em;
+
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+
+  border-bottom: 1px solid $base-text-light;
+
+
+  // Placeholder styling
+  &::-webkit-input-placeholder { color: $base-text-light; }
+  &::-moz-placeholder { color: $base-text-light; }
+  &:-ms-input-placeholder { color: $base-text-light; }
+}
+
+// Group Registration Management
+.group-registration__loading { display: none; }
+.page-id-1254 {
+  .loading .group-registration__loading {
+    opacity: 1;
+    z-index: 1000;
+  }
+
+  #event-register {
+    position: relative;
+  }
+
+  .group-registration__form {
+    position: relative;
+    z-index: 500;
+  }
+  .loading .group-registration__form {
+    opacity: 0.3;
+    height: 250px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  .group-registration__loading {
+    position: absolute;
+    top: 90px;
+    background-color: transparent !important;
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.5s ease-in-out;
+    display: block;
+  }
+}

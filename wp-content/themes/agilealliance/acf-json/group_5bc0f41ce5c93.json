@@ -1,0 +1,60 @@
+{
+    "key": "group_5bc0f41ce5c93",
+    "title": "Menu Colors",
+    "fields": [
+        {
+            "key": "field_5bc0f46019738",
+            "label": "Tab Colors",
+            "name": "tab_colors",
+            "type": "repeater",
+            "instructions": "Add colors in the order you want them to be used left to right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5bc0f49219739",
+                    "label": "line color",
+                    "name": "line_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "location\/unified_navigation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1539372259
+}

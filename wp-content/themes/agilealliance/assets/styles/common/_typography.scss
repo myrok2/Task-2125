@@ -1,0 +1,82 @@
+//
+// Typography
+@import "_rem";
+
+// ----- Font Variable -----
+
+$sofia: 'sofia-pro', sans-serif !important;
+
+// ----- Weight Variables -----
+$sofia-ultra-light: 100 !important;
+$sofia-extra-light: 200 !important;
+$sofia-light: 300 !important;
+$sofia-regular: 400 !important;
+$sofia-medium: 500 !important;
+$sofia-bold: 600 !important;
+$sofia-black: 900 !important;
+
+html, body,
+body p, body p span {
+  @include rem-baseline;
+
+  font-family: $sofia;
+  @include rem(font-size, 16px);
+  //@include rem(line-height, 28px);
+  line-height: 28px;
+  font-style: normal;
+  // font-weight: $sofia-light;
+  font-weight: $sofia-extra-light;
+  letter-spacing: -0.25px;
+
+  color: $base-text;
+}
+html,
+body p {
+
+  letter-spacing: -0.25px;
+
+}
+.h1, h2, h3, h4, h5, h6 {
+  font-family: $sofia;
+  font-weight: $sofia-light;
+}
+
+html {
+
+  .resources-headline{
+    text-align: center;
+    color: #4a4a4a;
+    font-weight: $sofia-light;
+    h2{
+      @include rem(font-size,24px);
+    }
+    .quote-author{
+      font-size: 18px;
+    }
+  }
+
+  .vc_ui-panel-content-container {
+    font-size: 12px !important;
+  }
+
+  @include rem-baseline(100%);
+
+  @media (min-width: $screen-sm-min) {
+    /* Small devices (tablets, 768px and up) */
+
+    @include rem-baseline(110%);
+
+  }
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: $screen-md-min) {
+
+    @include rem-baseline(120%);
+
+  }
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: $screen-lg-min) {
+
+    @include rem-baseline(130%);
+
+  }
+}

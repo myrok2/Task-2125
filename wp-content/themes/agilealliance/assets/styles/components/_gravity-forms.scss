@@ -1,0 +1,330 @@
+//
+// Gravity Form
+// --------------------------------------------------
+li.gfield { margin-bottom: 0 !important; }
+
+.gfield_label {
+  color: $brand-grey-light;
+  // font-weight: 300 !important;
+  display: block !important;
+  //position: absolute;
+  top: 25px;
+  opacity: 0;
+  z-index: 10;
+  cursor: default;
+  margin: .625em 0 0 0 !important;
+  @include font-styling($base-text, 16px, 24px);
+  font-weight: 200 !important;
+
+  span { color: $brand-grey-light !important; }
+
+  @include transition-std(all);
+
+  &.isFocus {
+    font-size: 16px !important;
+    top: 0;
+    opacity: 1;
+    font-weight: 300 !important;
+
+    @include breakpoint(medium) { top: 10px; };
+  }
+}
+
+// Pricing Fields -> Total
+.gfield_price .gfield_label.isFocus{ top: 0; }
+
+.ginput_container_address label {
+  @include font-styling($base-text, 16px, 24px);
+  font-weight: 200 !important;
+}
+
+.aa_gfield-textarea .gfield_label {
+  top:30px;
+  opacity: 1;
+  @include font-styling($base-text, 16px, 24px);
+  font-weight: 200 !important;
+  line-height: 3rem !important;
+  // @include breakpoint(medium) { top: 45px; };
+  @include breakpoint(medium) { top: 33px; };
+  @include breakpoint(large) { top: 38px; };
+
+  @include transition-std(all);
+
+  &.isFocus {
+    font-size: 16px !important;
+    top: 0 !important;
+    //height: 9.375em;
+    font-weight: 300 !important;
+    line-height: 2.4rem !important;
+
+    @include breakpoint(medium) { top: 10px; };
+  }
+}
+
+.gfield input,
+.gfield textarea,
+.gfield select {
+  @include forms-input();
+  text-indent: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 5px 0 !important;
+  //padding-top: 2.5em !important;
+}
+
+//.gfield_radio,
+//.gfield_checkbox { padding-top: 2.5em !important; }
+
+.gfield .ginput_container_total span {
+  display: block;
+  margin-bottom: 20px !important;
+  padding-top: 1.5em !important;
+}
+
+.gfield textarea {
+  height: 4.55em !important;
+  @include transition-std(all);
+
+  &.isFocus { height: 9.25em !important; }
+}
+
+.gfield select[multiple="multiple"] {
+  padding-bottom: 0 !important;
+  option { background-color: $base-border-light; }
+}
+
+.gfield .ginput_container_time {
+  i, label { display: none; }
+}
+
+.ginput_container_address input,
+.ginput_container_address select {
+  padding-top: .5em !important;
+}
+
+.ginput_container_address  {
+
+  label { display: none !important; }
+
+  & span label {
+    display: block !important;
+    color: $brand-grey-light !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    margin: .625em 0 0 0 !important;
+    letter-spacing: -.25px !important;
+  }
+}
+
+.gfield.gfield_error {
+  label { color: $brand-grey-light !important; }
+
+  input,
+  textarea {
+    border: 0 !important;
+    border-bottom: 1px solid $base-border-dark !important;
+  }
+}
+
+// Section progression buttons
+.aa_gf-section {
+  .gform_page_footer input[type="button"],
+  & + .gform_page .gform_page_footer input[type="button"] {
+    @extend .aa_btn;
+    @extend .btn;
+    @extend .aa_border-blue-light-primary;
+  }
+}
+
+.ginput_container_singleproduct {
+  //padding-top: 2.5em !important;
+}
+
+.gfield .name_first label,
+.gfield .name_last label { display: none; }
+
+// Error styling
+.gfield_error {
+  background-color: transparent !important;
+  border: 0 !important;
+
+  .ginput_container {
+    margin-top: .375em !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+// ----- Events GF ------
+.aa_event-register-form {
+  padding-bottom: 3.6em;
+
+  @include breakpoint(medium) { padding-bottom: 3.6em; }
+}
+
+.aa_vc-form-max-width {
+  max-width: 850px;
+}
+
+#aa_event-reg-form h2 {
+  margin-top: 1em;
+  @include font-styling($base-text-dark !important, 24px !important, 30px !important);
+
+  @include breakpoint(medium) { margin-top: 0; }
+}
+
+#event-register {
+  .gfield input,
+  .gfield textarea,
+  .gfield select {
+    margin-bottom: 20px !important;
+    padding-top: 2em !important;
+
+    // @include breakpoint(large) { padding-top: 1.5em !important; }
+  }
+
+  .gfield label { margin-top: 0 !important }
+
+  // Dropdown icon
+  i.fa { top: 2.3em; }
+
+  // Checkbox and Radio inputs
+  .checkbox label {
+    @include font-styling($base-text, 16px, 24px);
+    font-weight: 200 !important;
+    z-index: 10;
+
+    display: block;
+    padding-left: 0;
+    padding-bottom: .5em;
+
+    & ~ label {
+      display: inline-block;
+
+      & ~ label { padding-left: 20px; }
+    }
+
+    input[type="checkbox"] { margin-top: 9px; }
+  }
+
+  input[type="submit"] { margin-top: 1em; }
+
+  .gfield .errors { color: red; }
+  .errors li { margin-bottom: 0; }
+}
+
+// Separator for mobile under header
+.aa_mobile-separator { @include breakpoint(medium) { display: none; } }
+
+// Receive Conference Related Email
+.checkbox.aa_checkbox { padding-left: 20px; }
+
+// Event Registration Confirmation Banner
+#aa_event-register-form-confirmation-banner {
+  display: none;
+  // margin-top: -3.5em;
+  // transition: all 500ms ease-in-out;
+  // @include breakpoint(medium) { margin-top: -5em; }
+
+  // &.isAnimated { margin-top: 0; }
+
+  h2 {
+    font-size: 18px;
+    @include breakpoint(medium) { @include font-styling(#fff, 24px, 32px); }
+  }
+}
+
+// My Registration page form - Shortcodes.php
+#request-transfer input#transferEmail { margin-bottom: 20px!important; }
+
+.gform_fields > li {
+  margin-bottom: 30px !important;
+}
+.gfield_label {
+  position: static;
+}
+
+label {
+  font-weight: 100;
+}
+
+.gfield_label.isFocus {
+  font-size: 18px !important;
+}
+.gfield select {
+  padding-top: 0 !important;
+  font-size:16px;
+}
+.ginput_container_select .aa_icon {
+  bottom:-50%;
+}
+
+.ginput_container_likert {
+  padding-top: 20px;
+}
+.gsurvey-likert-choice-label {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.gfield_label {
+  min-height: 27px;
+}
+
+.ginput_container {
+  margin-top: 0 !important;
+}
+
+// Checkbox and Radio
+.gfield_checkbox li label,
+.gfield_radio li label {
+  font-size: 16px;
+}
+
+.ginput_container_checkbox,
+.ginput_container_radio {
+  margin-left: 0;
+}
+
+.gfield_checkbox, .gfield_radio {
+  padding-top: 0 !important;
+}
+
+.ginput_container_radio {
+  vertical-align: middle;
+  ul.gfield_radio {
+    vertical-align: middle;
+    margin: 15px 0 0 20px !important;
+    > li {
+      overflow: visible !important;
+      vertical-align: middle;
+      input[type="radio"] {
+        display: inline-block !important;
+        float:none !important;
+        background: black;
+        vertical-align: middle !important;
+        margin: 0 0 0 0 !important;
+      }
+      > label {
+        margin: 3px 0 0 10px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+      }
+    }
+  }
+}
+
+.ginput_container_checkbox {
+  ul.gfield_checkbox {
+    margin: 15px 0 0 20px !important;
+  }
+}
+
+// Datepicker
+
+.ui-datepicker {
+  margin-top: -110px;
+}
+
+.gform_wrapper .datepicker {
+  width:100% !important;
+}

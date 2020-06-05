@@ -1,0 +1,140 @@
+
+footer {
+  clear: both;
+  background-color: $footer-bg;
+  padding: 2rem;
+  @include font-std(16px);
+
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  .footer-top {
+    padding: 0 0 2rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid $base-border;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .footer-widget-left {  // Footer Copyright
+    @include breakpoint(md-and-below) {
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: auto;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+
+      @include breakpoint(lg-and-below) {
+        display: none;
+      }
+
+      img {
+        width: 75px;
+        margin-right: 10px;
+      }
+    }
+
+    p {
+      color: $base-text-light;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 200 !important;
+      line-height: 1.5em;
+      margin: 0;
+      vertical-align: middle;
+
+      a {
+        color: $base-text-light;
+        display: inline-block;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .footer-widget-right { // Footer Social Icon Links
+    margin-top: 0.5rem;
+    text-align: right;
+
+    @include breakpoint(md-and-below) {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    a {
+      color: $white;
+      padding: 18px;
+      margin-right: 5px;
+      margin-top: 0;
+
+      &:hover {
+        background-color: $brand-blue-light;
+      }
+
+      .fa { font-size: 18px; }
+    }
+  }
+
+  .footer-widget-column { // Footer Link List Columns
+    color: $white-alt;
+    font-size: 17px;
+    font-weight: 400;
+
+    @include breakpoint(super) { // 5 column layout
+      flex: 0 0 20%;
+      max-width: 20%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      position: relative;
+      width: 100%;
+    }
+
+    &__item {
+      margin-top: 2rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      line-height: 1.2em;
+      list-style: none;
+      margin: 0;
+      padding: 0.3rem 0;
+
+      &.hvr-overline-reveal { // Overrides
+        display: block;
+        vertical-align: baseline;
+        transform: none;
+        box-shadow: none;
+        backface-visibility: inherit;
+        overflow: auto;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    h6 {
+      color: $white;
+      font-size: 19px;
+      font-weight: 600 !important;
+      margin: 0 0 0.6rem;
+      padding: 0;
+    }
+
+    a {
+      color: $white-alt;
+    }
+  }
+}

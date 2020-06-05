@@ -1,0 +1,81 @@
+// ----- Glyphicons Font Path  -----
+$icon-font-path:        "../fonts/";
+
+// ----- Grid Settings  -----
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// ----- Brand Colors  -----
+$brand-primary:         #6699cc;
+$brand-secondary:       #006699;
+$brand-dark:            #497D9D;
+
+$brand-orange:          #f77d16;
+$brand-blue-dark:       #5798b9;
+$brand-blue-light:      #03bbd3;
+$brand-blue-alt:        #287FD6;
+$brand-purple:          #995fb6;
+$brand-yellow:          #fec128;
+$brand-green:           #26D975;
+$brand-green-sea:       #68B642;
+$brand-grey-light:      #9B9B9B;
+$brand-grey-dark:       #333333;
+
+$nav-dark-coal:         #3B3B3B;
+$nav-coal:              #4A4A4A;
+
+$white: #fff;
+$white-alt: #f3f3f3;
+
+// ----- Base Text  -----
+$base-text: #666;
+$base-text-dark: #333;
+$base-text-light: #999;
+
+// ----- Base Text Opacity (wireframes)  -----
+$base-text-opacity: rgba(102,102,102, 0.8);
+
+// ----- Borders  -----
+$base-border: rgba(153, 153, 153, 0.3);
+$base-border-light: rgba(153, 153, 153, 0.1);
+$base-border-dark: rgba(0,0,0, 0.3);
+$hero-minititle-bar: rgba(102,102,102, 0.3);
+
+$base-vc-border: #979797;
+
+// ----- Accent HR  -----
+$accent-hr: #D9D9D9;
+$accent-hr-width: 75px;
+
+// ----- Section Background  -----
+// $img-overlay-bg: rgba(0,0,0, 0.5);
+// $img-overlay-bg: rgba(74,74,74, 0.8);
+$img-overlay-bg: rgba(20,20,20, 0.5);
+$sub-menu-bg: #505050;
+$section-bg: #F8F8F8;
+$footer-bg: #373737;
+$footer-bg-twitter: lighten($footer-bg, 5%);
+
+
+// ----- Header Variables  -----
+$nav-height: 80px; // Top nav menu wrapper height
+$nav-border-height: 3px; // Top nav menu wrapper top-border height
+$nav-link-height: $nav-height - $nav-border-height; // Top-nav menu link height
+
+$reduced-nav-height: 50px; // Top nav menu wrapper height
+$reduced-nav-link-height: $reduced-nav-height - $nav-border-height; // Top-nav menu link height
+
+
+// ----- Resources Grid Variables -----
+
+// Search Form
+$rgrid-search-bg: #4A4A4A;
+
+// Membership Content Overlay
+$rgrid-overlay-top: #313131;
+$rgrid-overlay-bottom: #3F3F3F;
+
+
+// ----- Bootstrap Overrides -----
+$navbar-height: $nav-height; // Override bootstrap height
+$grid-float-breakpoint: 1100px;

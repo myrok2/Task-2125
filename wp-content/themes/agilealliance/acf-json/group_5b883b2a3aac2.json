@@ -1,0 +1,64 @@
+{
+    "key": "group_5b883b2a3aac2",
+    "title": "Podcasts",
+    "fields": [
+        {
+            "key": "field_5b883b2b143d9",
+            "label": "Podcast Code",
+            "name": "podcast_code",
+            "type": "wysiwyg",
+            "instructions": "Embed your podcast here (iframe or code snippet from hosting service, audio file embed from your \"Media\", etc.).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 1,
+            "toolbar": "full",
+            "delay": 0
+        },
+        {
+            "key": "field_5b883b2b144d2",
+            "label": "Podcast Description",
+            "name": "podcast_description",
+            "type": "wysiwyg",
+            "instructions": "Description if applicable.   (Connect speakers to user accounts on the right)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aa_podcast"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1537199656
+}

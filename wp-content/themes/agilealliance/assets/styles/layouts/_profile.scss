@@ -1,0 +1,203 @@
+//
+// Profile / Organization
+// --------------------------------------------------
+
+.aa_profile-org {
+  // margin-top: 20px;
+
+  .row {
+    border-top: 1px solid $base-border;
+  }
+
+  .row:last-of-type {
+    border-top: 0;
+    @include breakpoint(medium) { border-top: 1px solid $base-border; }
+  }
+
+  ul li {
+    list-style-type: none;
+    @include font-styling($base-text, 16px, 48px);
+  }
+
+  li:not(.aa_telephones-wpr) { border-bottom: 1px solid $base-border-light; }
+  li:last-of-type { border: 0; } // Removes bottom border
+
+  // Addes border back to nested ul li
+  ul ul li:last-of-type { border-bottom: 1px solid $base-border-light; }
+
+  .aa_profile-border-left { border-left: 1px solid $base-border; }
+
+  .aa_profile-plrz {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .aa_profile-plr15,
+  .aa_acf-content-secondary p {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include breakpoint(medium) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .aa_acf-content-secondary p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 200!important;
+  }
+
+  .aa_profile-contact {
+    &.email,
+    &.website {
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .aa_acf-content-top.aa_s4 {
+    height: 250px;
+    @include breakpoint(medium) { height: 400px; }
+  }
+
+  // ----- Admin Access Section ----- //
+  .aa_admin-btn {
+    // display: inline-block;
+    display: block;
+    padding: 4px 35px !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .aa_admin-btn-wpr {
+    width: 100%;
+    margin: 0 auto;
+    // .aa_admin-btn:first-of-type { margin-bottom: 1em; }
+    .aa_admin-btn { margin-bottom: 1em; }
+  }
+
+  // Logo card section mobile adjustment
+  .adminAccessWpr { min-height: 400px; }
+
+  // Section titles
+  .title {
+    margin-top: 2em;
+    @include breakpoint(medium) { margin-top: 0; }
+  }
+
+  .title h4{
+    @include font-styling(#000, 16px, 28px);
+    font-weight: 600 !important;
+    text-transform: uppercase;
+
+    @include breakpoint (medium) {
+      @include font-styling(#000, 12px, 48px);
+      font-weight: 600 !important;
+      letter-spacing: .75px;
+      text-transform: uppercase;
+    }
+  }
+
+  li.title { border-bottom: 1px solid $base-border; }
+
+  // Logo section
+  .aa_acf-content-top.aa_s1 { text-align: center; }
+
+  .aa_logo-title-wpr {
+    height: 100%;
+    position: relative;
+
+    .aa_logo-title {
+      // @include center-center;
+      width: 90%;
+      padding-top: 1em;
+      margin: 0 auto;
+
+      img { width: 100%; }
+    }
+
+    h2 { @include font-styling(#000, 28px, 32px) }
+
+    p { margin-bottom: 1em; }
+  }
+
+  // Location list items
+  .aa_location-fields { padding: 1em 0; }
+
+  .aa_location-fields p,
+  .aa_location-fields span {
+    margin-bottom: 0;
+    @include font-styling($base-text, 16px, 28px);
+    font-weight: 200 !important;
+  }
+
+  .aa_profile-aux-cta {
+    text-align: center;
+    height: 70%;
+    position: relative;
+
+    p {
+      @include center-center;
+      width: 90%;
+    }
+
+    span {
+      @include font-styling($base-text, 18px, 24px);
+      font-weight: 200 !important;
+      margin-bottom: 1.5em;
+      display: block;
+    }
+  }
+
+  .aa_acf-content-secondary.aa_s2 { padding-bottom: 2em; }
+
+  @include breakpoint(medium) { .aa_acf-content-secondary { padding-bottom: 2em; } }
+
+  .aa_acf-content-top.aa_s3,
+  .aa_acf-content-top.aa_s4,
+  .aa_acf-content-secondary.aa_s2 {
+    border-top: 0;
+    @include breakpoint(medium) { border-top: 1px solid $base-border; }
+    @include breakpoint(large) { border-top: 0; }
+  }
+
+  // Icons and Text
+  i {
+    color: $base-text-light;
+    width: 2em;
+
+    ~ span,
+    ~ a {
+      @include font-styling($base-text, 16px, 48px);
+      @include breakpoint(medium) { @include font-styling($base-text, 14px, 48px) };
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

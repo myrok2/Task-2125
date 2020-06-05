@@ -1,0 +1,658 @@
+//
+// Resources
+// --------------------------------------------------
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Sass Bootstrap */
+
+$third-party-event-height: 100px;
+$resource-card-height: 170px;
+
+.resources {
+  font-weight: 200;
+
+  .resources-headline { @include section-padding; }
+
+  .inspirational-quotes {
+    text-align: center;
+
+    h2 { @include font-std(44px); }
+
+    b {
+      font-size: 18px;
+      font-weight: 200;
+      color: #999;
+    }
+  }
+}
+
+.back {
+  // Fix for Safari issue not hiding card's backface
+  transform-style: flat !important;
+}
+
+// Set global ul li to none for cards
+.card-post-author ul li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+//
+// Resources Grid Page
+// --------------------------------------------------
+
+// Search Form
+
+
+// Restricted Content Overlay
+
+.protected-resource-lock {
+  width: 10px!important;
+  height: 12px!important;
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.8;
+}
+
+.rgrid-overlay{
+  text-align: center;
+  height: 100%;
+
+  .overlay-top{
+    background: $rgrid-overlay-top;
+    span h2{
+      @include rem(font-size, 20px);
+      color: #fff;
+      margin:0 auto;
+      padding: 0.3em 0;
+      .has-featured-image & {
+        padding:1em 0;
+      }
+    }
+  }
+  .overlay-bottom{
+    background: $rgrid-overlay-bottom;
+    padding-bottom:2em;
+    overflow: hidden;
+    span{
+      p{
+        text-align: center;
+        color: #fff;
+        font-size:16px;
+        font-weight:$sofia-extra-light;
+        line-height:20px;
+        padding: 0.4em 0.2em;
+        margin:0;
+        .has-featured-image & {
+          padding: 1em 0;
+        }
+      }
+    }
+    .overlay-signupin{
+      width: 100%;
+      margin: 0 auto;
+      a{
+        .signup-in-button{
+          border-radius: 30px;
+          border-width: 3px;
+          border-color: $brand-purple;
+          background: $brand-purple;
+          border-style: solid;
+          color: #FFF;
+          width: 140px;
+          margin: 0 auto;
+          .btn-text{
+            font-weight: $sofia-black;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+        .signup-in-button:hover{
+          background: transparent;
+        }
+      }
+      a:hover,a:focus{
+        text-decoration: none;
+      }
+      .sign-in{
+        font-size:10px;
+        p {
+          padding: 0 0.3em;
+        }
+        a{
+          color: #fff;
+        }
+        a:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .rgrid-overlay{
+    .overlay-top{
+      span h2{
+        @include rem(font-size, 14px);
+        padding: 0.4em 0;
+        .has-featured-image & {
+          padding: 2em 0;
+        }
+      }
+    }
+    .overlay-bottom{
+      padding-bottom:5em;
+      span{
+        p{
+          font-size: 10px;
+          line-height: 1;
+          padding: 0.5em 0.2em;
+          .has-featured-image & {
+            padding: 1em;
+          }
+        }
+      }
+      .sign-in{
+        padding: 0;
+        line-height: 1;
+        p{
+          display: inline-block;
+          line-height: 1;
+          font-size: 12px !important;
+          br {
+            display: none;
+          }
+          .has-featured-image & {
+            padding: 1em 0 0 .5em;
+            br {
+              display: inherit;
+            }
+          }
+        }
+        p.sign-in-mobile {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  .rgrid-overlay {
+    .overlay-top {
+      span h2 {
+        padding: 0.4em 0;
+        .has-featured-image & {
+          padding: 2em 0;
+          min-height: 4em;
+        }
+      }
+    }
+  }
+}
+
+// End of Resource Grid Overlay
+
+
+// Resource Grid
+@import "components/_resource-grid-defaults";
+@import "components/_resource-grid";
+
+.article-wrap{
+  margin: 0 10px;
+}
+
+article.grid-resource-item {
+  width: 100%;
+  min-height: $resource-card-height + 15px;
+
+  .has-featured-image & {
+    min-height: 220px;
+  }
+
+  // The Alliance
+  &.aa_organizations,
+  &.aa_story,
+  &.aa_initiative { border-top-color: $brand-blue-dark !important; }
+
+    // Events
+  &.aa_event_session { border-top-color: $brand-yellow !important; }
+
+    // Community
+  &.aa_community_groups,
+  &.aa_affiliate { border-top-color: $brand-orange !important; }
+
+  // Resources
+  &.post,
+  &.aa_book,
+  &.aa_video,
+  &.aa_podcast,
+  &.aa_research_paper,
+  &.aa_speaker_directory,
+  &.aa_experience_report,
+  &.aa_glossary { border-top-color: $brand-purple !important; }
+
+  .front{
+    padding: 25px 20px 0 20px;
+    @media screen and (max-width: 600px) {
+      padding-top: 10px;
+    }
+  }
+
+  p{
+    text-align: left;
+    margin-bottom: 0;
+    a{
+      color: $brand-grey-dark;
+      font-weight: $sofia-light;
+      :hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  .front header a {
+    height: 140px;
+    overflow: hidden;
+
+    &img {overflow: hidden; }
+  }
+
+  .svc_post_image, li.svc_event .svc_post_image {
+    height: 140px;
+  }
+  .resource-item-author{
+    @include rem(font-size,16px);
+    line-height: 20px;
+    font-weight: $sofia-extra-light;
+    color: $brand-grey-light;
+  }
+  .resource-item-wrap {
+    position: relative;
+    min-height: $resource-card-height - 20px;
+    //height: 100% !important;
+  }
+  .resource-card-bottom{
+    //position: relative;
+  }
+  section.resource-item-title {
+    //Helps set card height
+    //min-height: 100px;
+  }
+  section.resource-item-cat-date {
+    //Helps set card height
+    //min-height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 5%;
+
+    // Hover states
+    a {
+      // The Alliance
+      &.aa_organizations,
+      &.aa_story,
+      &.aa_initiative { @include btn-alt( $brand-blue-dark ); }
+
+        // Events
+      &.aa_event_session { @include btn-alt( $brand-yellow ); }
+
+        // Community
+      &.aa_community_groups,
+      &.aa_affiliate { @include btn-alt( $brand-orange ); }
+
+      // Resources
+      &.post,
+      &.aa_book,
+      &.aa_video,
+      &.aa_podcast,
+      &.aa_research_paper,
+      &.aa_speaker_directory,
+      &.aa_experience_report,
+      &.aa_glossary { @include btn-alt( $brand-purple ); }
+    }
+  }
+
+  .resource-item-type {
+    float: left;
+
+    p,a {
+      padding: 2px 12px;
+      font-family: 'sofia-pro', sans-serif !important;
+      font-size: 12px;
+      font-weight: 200;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 102, 153, 0.3);
+      background-color: transparent;
+      text-decoration: inherit;
+      color: $brand-grey-light;
+    }
+  }
+  .resource-item-post-date {
+    p {
+      font-size: 13px;
+      font-weight: $sofia-extra-light;
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+
+  @media only screen and (min-width:991px) and (max-width: 1300px){
+    .resource-item-post-date{
+      float:left;
+      -webkit-transition: width 1s ease-out;
+      -moz-transition: width 1s ease-out;
+      -ms-transition: width 1s ease-out;
+      -o-transition: width 1s ease-out;
+      transition: width 1s ease-out;
+
+      width: 100%;
+    }
+  }
+}
+
+.resource-item-title p:hover,
+.resource-item-title p a.svc_title:hover,
+div[class^="svc_post_grid_"] article section.resource-item-title p a.svc_title:hover { color: inherit !important; }
+
+/*Style 4 (Agile Alliance Resource Grid) css start*/
+div.svc_post_grid_s4 article{
+}
+
+.grid-p2p ul li {
+  list-style: none !important;
+}
+
+div.svc_post_grid_s4 article header {
+  position: relative;
+  line-height:0;
+  text-align:left;
+}
+div.svc_post_grid_s4 article section{
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+div.svc_post_grid_s4 article section p,a.svc-title{
+  line-height:20px;
+  @include rem(font-size,18px);
+  margin-bottom:0;
+  text-align:left;
+  padding: 0;
+  :hover{
+    text-decoration: none;
+  }
+}
+div.svc_post_grid_s4 section div .ajax-popup-link{ color:#999;position:absolute;right:0;}
+div.svc_post_grid_s4 article section p.svc_info{
+  line-height:1.4em;
+  font-size:13px;
+  text-align:left;
+}
+div.svc_post_grid_s4 article section, div.svc_post_grid_s4 article footer {
+  padding: 0 3%;
+  display:inline-block;
+  width:100%;
+}
+div.svc_post_grid_s4 article footer ul.svg_post_meta {
+  float: left;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+  margin-bottom:0;
+}
+div.svc_post_grid_s4 article footer{
+  background:#fff;
+  box-shadow:0 10px 5px -10px rgba(0, 0, 0, 0.08) inset;
+  vertical-align:middle;
+  padding:3%;
+}
+div.svc_post_grid_s4 article footer ul li.time {
+  display: block;
+}
+div.svc_post_grid_s4 article footer ul li {
+  display: inline;
+  line-height: 1;
+  list-style: none;
+  color:#636363;
+}
+div.svc_post_grid_s4 article footer ul li a{
+  color:#999;
+}
+div.svc_post_grid_s4 section{ text-align:left;}
+div.svc_post_grid_s4 section div.svc_post_cat {
+  background: url("../../../assets/image/line.png") no-repeat scroll center bottom / 120px 1px rgba(0, 0, 0, 0);
+  color: #999;
+  margin-bottom:10px;
+  padding-bottom:10px;
+  text-align:left;
+  position:relative;
+}
+div.svc_post_grid_s4 section div.svc_post_cat a{
+  font-size:12px;
+  line-height: 20px;
+}
+div.svc_post_grid_s4 section p.svc_read_more_p{ margin-bottom:15px;}
+div.svc_post_grid_s4 section p a.svc_read_more{
+  background: none repeat scroll 0 0 #3a3939;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+div.svc_post_grid_s4 footer .svc_social_share > ul li{
+  margin-right: 0 !important;
+  padding: 3px 6px;
+  float:right;
+  margin-bottom:0;
+  list-style:none;
+}
+div.svc_post_grid_s4 footer .svc_social_share{
+  float:right;
+
+}
+
+
+/*Style 4 css end*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+
+  div.svc_post_grid_s4 article .resource-item-post-date {
+    margin-right: 0px;
+  }
+
+  div.svc_post_grid_s4 article section p{
+    @include rem-baseline(95%);
+    font-size: 16px;
+  }
+
+  div.svc_post_grid_s4 {
+    article.grid-resource-item {
+      min-height: $resource-card-height;
+      max-height: $resource-card-height !important;
+      overflow: hidden;
+      &.third-party-event {
+        min-height: $third-party-event-height;
+      }
+    }
+    .has-featured-image {
+      article.grid-resource-item {
+        min-height: 310px;
+        max-height: 310px !important;
+      }
+      .resource-item-wrap {
+        min-height: 290px;
+      }
+    }
+  }
+
+   .rgrid-overlay {
+     p {
+       font-size: 14px !important;
+     }
+    .overlay-top {
+      .has-featured-image & {
+        min-height: 4em;
+      }
+    }
+  }
+
+  article.grid-resource-item {
+    padding: 0;
+    min-height: 310px;
+    background-color: $brand-grey-dark;
+
+    &.third-party-event {
+      min-height: $third-party-event-height;
+      padding-bottom: 7px;
+      .resource-item-wrap {
+        min-height: $third-party-event-height;
+      }
+    }
+
+    .front{
+      padding: 0;
+      background-color: #fff;
+      height: 100%;
+    }
+
+    .resource-item-author{
+      @include rem-baseline(95%);
+    }
+
+    section.resource-item-title {
+      //Helps set card height
+      //min-height: 100px;
+      padding: 0 3%;
+    }
+    section.resource-item-cat-date {
+      padding: 0 3%;
+    }
+  }
+
+  article.grid-resource-item .pflip .front {
+    padding: 0 0 20px 0;
+    height: 305px;
+    float: left;
+    position: absolute;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .rgrid-overlay .overlay-top {
+    min-height: 0;
+  }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+
+//
+// Post cards
+// --------------------------------------------------
+
+#resources-grid {
+  @include section-padding;
+
+  .resource-cards {
+    justify-content: center;
+
+    .card {
+      width:230px;
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid $base-text-light;
+
+      &.card-accent-learn { border-top: 3px solid $brand-blue-light; }
+      &.card-accent-resources { border-top: 3px solid $brand-purple; }
+      &.card-accent-events { border-top: 3px solid $brand-yellow; }
+      &.card-accent-community { border-top: 3px solid $brand-orange; }
+      &.card-accent-alliance { border-top: 3px solid $brand-blue-dark; }
+
+      .aa_card-img {
+        background-size: cover;
+        background-position: center;
+        height: 125px;
+      }
+
+      .content {
+        @include font-std(1em);
+
+        .header {
+          font-size: 17px;
+          font-weight: 200 !important;
+
+          margin: 10px 0 7px !important;
+        }
+
+        .aa_post-author {
+          color: $base-text-light;
+          font-weight: 200;
+
+          margin-bottom: 20px;
+        }
+      }
+
+
+      .post-categories {
+        float: left;
+
+        li {
+          padding: 0;
+          margin: 0;
+
+          a {
+            display: inline-block;
+            padding: 1px 10px;
+
+            @include font-std(13px);
+
+            color: $brand-purple !important;
+            border: 1px solid $brand-purple;
+            border-radius: 30px;
+            background-color: transparent;
+          }
+
+          ~ li { margin-top: 5px; }
+        }
+      }
+
+      .post-date {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ui.cards .card {
+    width: 100% !important;
+  }
+}
+
+.ui.card>.extra,
+.ui.cards>.card>.extra {
+  border-top: 0 !important;
+}
+
+.ui.card>:first-child,
+.ui.cards>.card>:first-child {
+  border-radius: 0 !important;
+}

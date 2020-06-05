@@ -1,0 +1,22 @@
+#ErrorDocument 401 /401.html
+#AuthName "Secure Area"
+#AuthType Basic
+#AuthName "Password Protected Area"
+#AuthUserFile /home/pndev/public_html/wp-admin/.htpasswd
+#Require valid-user
+
+
+# BEGIN WordPress
+# The directives (lines) between `BEGIN WordPress` and `END WordPress` are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

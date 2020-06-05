@@ -1,0 +1,45 @@
+{
+    "name": "whatthejeff/nyancat-phpunit-resultprinter",
+    "description": "Nyan Cat result printer for PHPUnit",
+    "keywords": ["nyan","cat","rainbow","phpunit","tests"],
+    "homepage": "http://github.com/whatthejeff/nyancat-phpunit-resultprinter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeff Welch",
+            "email": "whatthejeff@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "whatthejeff/nyancat-scoreboard": "~1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.8.*@dev",
+        "phpunit/php-file-iterator": ">=1.3.1@dev",
+        "phpunit/php-text-template": ">=1.1.1@dev",
+        "phpunit/php-code-coverage": "1.3.*@dev",
+        "phpunit/phpunit-mock-objects": "1.3.*@dev",
+        "phpunit/php-timer": ">=1.1.0@dev",
+        "sebastian/diff": ">=1.0.0@dev",
+        "sebastian/exporter": ">=1.0.0@dev",
+        "sebastian/version": ">=1.0.0@dev",
+        "pear-pear/pear": "1.9.4"
+    },
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "NyanCat": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
+        }
+    }
+}

@@ -1,0 +1,103 @@
+body {
+    background: #f1f1f1 !important;
+}
+
+.container {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #2c3e50;
+    width: 100% !important;
+}
+
+.row.flippercode-main {
+    background: #ffffff !important;
+    width: 101%;
+    margin-top: 20px;
+}
+
+.wpgmp-overview .hiderow {
+    display: none;
+}
+
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+    padding-top: 0px;
+}
+
+.toplevel_page_wpuap_view_overview .wpgmp-overview a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+.alert-success a,
+.alert-info a,
+.alert-danger a {
+    color: #fff;
+}
+
+.alert-success a:focus {
+    color: #fff;
+}
+
+.wpgmp-overview h4.alert.alert-info {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.WPUAP_or {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.WPUAP_or span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.wp-color-result {
+    height: 24px !important;
+}
+
+.wpgmp-overview label.radio {
+    margin-bottom: 10px !important;
+}
+
+.helpdask-bootom {
+    position: fixed;
+    right: 30px;
+    bottom: 5px;
+    border-radius: 5px;
+    padding: 0px;
+    background: url(../images/helpdesk.png) no-repeat;
+    width: 150px;
+    height: 83px;
+    color: #fff;
+    font-size: 0px;
+    display: block;
+    opacity: 1;
+}
+
+#reg_passmail,
+.submit {
+    clear: both
+}
+
+.update-nag,
+.updated {
+    display: none;
+}
+
+.ask-rating {
+    background: url(../images/rating.png) no-repeat center;
+    display: inline-block;
+    width: 150px;
+    float: right;
+    background-position-x: 70px;
+    color: white !important;
+}

@@ -1,0 +1,239 @@
+$breakpoints: (
+  'small'  : ( min-width:  0 ),
+  'medium' : ( min-width:  768px ),
+  'md-and-below' : ( max-width:  767px ),
+  'lg-and-below'  : ( max-width: 1191px ),
+  'large'  : ( min-width: 992px ),
+  'super'  : ( min-width: 1200px ),
+  'super-wide'  : ( min-width: 1300px )
+);
+
+@mixin breakpoint($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin header-expanded {
+  @media screen and (min-width: $grid-float-breakpoint) {
+    @content;
+  }
+}
+
+@mixin header-collapsed {
+  @media screen and (max-width: $grid-float-breakpoint - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin vertical-align-abs {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin transition-std($property...) {
+  transition: $property 300ms ease-in-out;
+}
+
+@mixin section-border($color) {
+  content: '';
+  width: 100%;
+
+  border-bottom: $nav-border-height solid $color;
+
+  position: absolute;
+  bottom:0;
+  left: 0;
+  z-index: 1;
+}
+
+@mixin carousel-border($color) {
+  content: '';
+  width: 100%;
+  border-top: $carousel-border-height solid $color;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  margin-top: -5px;
+}
+
+@mixin font-std($size) {
+  font-family: 'sofia-pro', sans-serif;
+  font-size: $size;
+  font-weight: 200;
+}
+
+@mixin font-icon-fa($size) {
+  font-family: 'FontAwesome';
+  font-size: $size;
+  font-weight: 200;
+}
+
+@mixin section-padding(){
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+@mixin btn-std($color) {
+  background: $color !important;
+  border-color: $color !important;
+
+  &:hover {
+    // background: transparent !important;
+    background: lighten($color, 10%) !important;
+    // color: $color !important;
+
+    // span { color: $color !important; }
+  }
+}
+
+@mixin btn-alt($color) {
+  color: $color !important;
+  border-color: $color !important;
+
+  &:hover {
+    background: $color !important;
+    color: #fff !important;
+  }
+}
+
+@mixin vc_btn-alt($color) {
+  border-color: $color !important;
+
+  &:hover {
+    background: $color !important;
+  }
+}
+
+@mixin top-nav-hover($color) {
+  border-top-color: $color;
+
+  &.hvr-overline-reveal:before { background: $color; }
+  & a:hover { color:$color; }
+}
+
+// @mixin placholder {
+//   ::-webkit-input-placeholder {@content}
+//   :-moz-placeholder           {@content}
+//   ::-moz-placeholder          {@content}
+//   :-ms-input-placeholder      {@content}
+// }
+
+@mixin forms-input {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid $base-border-dark;
+  box-shadow: none;
+  background-color: transparent;
+  // line-height: 23px;
+
+  margin-bottom: 20px !important;
+  padding-left: 0 !important;
+
+  width: 100% !important;
+  display: block;
+
+  // @include font-std(16px);
+  @include font-styling($base-text, 16px, 24px);
+  // font-family: 'sofia-pro', sans-serif;
+  font-weight: 200 !important;
+  // color: $base-text;
+
+  ::-webkit-input-placeholder {
+    line-height: 30px;
+    color: $brand-grey-light;
+  }
+
+  :-moz-placeholder {
+    line-height: 30px; /* Firefox 18- */
+    color: $brand-grey-light;
+  }
+
+  ::-moz-placeholder {
+    line-height: 30px; /* Firefox 19+ */
+    color: $brand-grey-light;
+  }
+
+  :-ms-input-placeholder {
+    line-height: 30px;
+    color: $brand-grey-light;
+  }
+}
+
+@mixin forms-select {
+  position: relative;
+  width: 100% !important;
+  border-radius: 0 !important;
+  border: 0;
+
+  // font-family: 'sofia-pro', sans-serif;
+  // font-weight: 200;
+  // color: $base-text;
+
+  // Chrome
+  appearance: none; // Removes the arrow accent
+  -webkit-border-radius: 0px;
+
+  border-bottom: 1px solid $base-border-dark;
+  box-shadow: none;
+  background-color: transparent;
+
+  padding-left: 0;
+
+  display: block;
+
+  // @include font-std(16px);
+  @include font-styling($base-text, 16px, 24px);
+  font-weight: 200 !important;
+
+  option { border-radius: 0; }
+}
+
+@mixin headline-subtext($h2-color, $h2-size, $h2-height, $p-color, $p-size, $p-height){
+  h2 {
+    color: $h2-color;
+    @include rem(font-size, $h2-size);
+    @include rem(line-height, $h2-height);
+  }
+  p,
+  p span {
+    color: $p-color;
+    @include rem(font-size, $p-size);
+    @include rem(line-height, $p-height);
+    margin: 0 auto;
+  }
+}
+
+
+@mixin font-styling($color, $size, $height) {
+  color: $color;
+  font-family: $sofia;
+  font-weight: 300 !important;
+  @include rem(font-size, $size);
+  @include rem(line-height, $height);
+}
+

@@ -1,0 +1,319 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.image-bg-wpr-btn {
+  white-space: nowrap;
+
+  padding: 15px 50px;
+
+  span {
+    letter-spacing: 2px;
+  }
+}
+
+// CPT type button
+.aa_cpt-type-btn {
+  padding: 2px 15px !important;
+
+  color: $base-text !important;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 1.25px;
+
+  border: 1px solid transparent !important;
+  border-radius: 30px !important;
+  background: transparent !important;
+
+  text-decoration: none;
+
+  @include transition-std(all);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.aa_btn {
+  // padding         : 10px 35px !important;
+  padding: 8px 32px !important;
+
+  color           : #fff !important;
+  font-size       : 13px !important;
+  font-weight     : 600 !important;
+  letter-spacing  : 1.25px;
+  text-transform  : uppercase;
+
+  border          : 3px solid transparent !important;
+  border-radius   : 30px !important;
+  background      : transparent !important;
+
+  text-decoration : none;
+
+  @include transition-std(all);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.aa_border-orange     { @include vc_btn-alt($brand-orange); }
+  &.aa_border-blue-dark  { @include vc_btn-alt($brand-blue-dark); }
+  &.aa_border-blue-light { @include vc_btn-alt($brand-blue-light); }
+  &.aa_border-purple     { @include vc_btn-alt($brand-purple); }
+  &.aa_border-yellow     { @include vc_btn-alt($brand-yellow); }
+  &.aa_border-green      { @include vc_btn-alt($brand-green); }
+
+  &.aa_border-orange-primary     { @include btn-std($brand-orange); }
+  &.aa_border-blue-dark-primary  { @include btn-std($brand-blue-dark); }
+  &.aa_border-blue-light-primary { @include btn-std($brand-blue-light); }
+  &.aa_border-purple-primary     { @include btn-std($brand-purple); }
+  &.aa_border-yellow-primary     { @include btn-std($brand-yellow); }
+  &.aa_border-green-primary      { @include btn-std($brand-green); }
+
+  &.aa_search-content-submit {
+    width:100%;
+    @include btn-std($brand-purple);
+  }
+
+  &.aa_footer-newsletter-signup,
+  &.aa_footer-newsletter-signup-form,
+  &.aa_twitter-follow-button {
+    @include btn-std($brand-blue-dark);
+  }
+
+  &.btn-primary,
+  &.aa_global-signup {
+    @include btn-std($brand-green);
+    line-height: normal;
+  }
+
+  &.btn-blue-dark {
+    @include btn-std($brand-blue-dark);
+    line-height: normal;
+  }
+
+  &.aa_border-yellow-alt{
+    @include btn-alt($brand-yellow);
+  }
+}
+
+.aa-homepage-btn {
+  @extend .aa_btn;
+
+  color          : #fff !important;
+  font-family    : 'sofia-pro',sans-serif !important;
+  font-weight    : $sofia-black;
+  font-size      : 12px !important;
+  letter-spacing : 1px;
+  border-radius  : 30px !important;
+
+  margin-top     : 15px;
+  padding        : 12px 35px;
+
+  text-transform : uppercase;
+
+  .ubtn-icon {
+    font-size: 12px !important;
+    top: 52%;
+  }
+
+  .ubtn-text {
+    margin-right: 5px;
+  }
+
+  &.recent-resources-link {
+    border     : 1px solid $brand-purple;
+    background : $brand-purple !important;
+
+    @include transition-std(all);
+  }
+
+  // &.recent-resources-link:hover { background-color: transparent !important; }
+
+  &.upcoming-events-link {
+    border: 1px solid $brand-yellow;
+    background: $brand-yellow !important;
+  }
+}
+
+// VC advanced button (anchor wrap)
+.aa_vc-btn {
+  text-decoration: none;
+  @include transition-std(all);
+  margin: 10px 0 !important;
+  padding: 0;
+
+  // a {
+  //   margin: 10px 0;
+  //   padding: 0;
+  // }
+
+  button {
+    padding: 8px 32px !important;
+    // @include font-styling(#fff, 13px, 18px);
+    // color: #fff !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+
+    border: 3px solid transparent !important;
+    border-radius: 30px !important;
+    background: transparent !important;
+  }
+
+  &.aa_btn-accent button { padding: 8px 38px 8px 26px !important; }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.aa_border-orange button     { @include vc_btn-alt($brand-orange); }
+  &.aa_border-blue-dark button  { @include vc_btn-alt($brand-blue-dark); }
+  &.aa_border-blue-light button { @include vc_btn-alt($brand-blue-light); }
+  &.aa_border-purple button     { @include vc_btn-alt($brand-purple); }
+  &.aa_border-yellow button     { @include vc_btn-alt($brand-yellow); }
+  &.aa_border-green button      { @include vc_btn-alt($brand-green); }
+
+  &.aa_border-orange-primary button     { @include btn-std($brand-orange); }
+  &.aa_border-blue-dark-primary button  { @include btn-std($brand-blue-dark); }
+  &.aa_border-blue-light-primary button { @include btn-std($brand-blue-light); }
+  &.aa_border-purple-primary button     { @include btn-std($brand-purple); }
+  &.aa_border-yellow-primary button     { @include btn-std($brand-yellow); }
+  &.aa_border-green-primary button      { @include btn-std($brand-green); }
+
+  .ubtn-icon {
+    transition: none;
+    right: 17px !important;
+  }
+}
+
+// ---- Rounded navigation triggers ----
+.navigation-trigger {
+  position      : relative;
+
+  border        : 2px solid $base-border;
+  border-radius : 50%;
+  padding       : 16px;
+
+  margin-right  : 12px;
+  margin-top    : 5px;
+
+  display       : inline-block;
+
+  i {
+    font-size: 16px;
+    @include center-center;
+  }
+
+  &.footer-link.social:hover { background-color: $brand-blue-light; }
+}
+
+// ---- AddThis Overrides (Desktop & Mobile verions) ----
+
+.addthis-smartlayers .atss,
+.addthis-smartlayers .at-share-dock.atss {
+  z-index: 1020; // Moving AddThis layer positioning into the standard Bootstrap layering range.
+}
+
+// ---- Favorites Button (from plugin) ----
+
+.logged-in {
+
+  .simplefavorite-button {
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    height: 48px;
+    padding: 0;
+    line-height: 1em;
+    color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E6A11F;
+    background-color: #E6A11F;
+    box-shadow: inset 0px 1px 0 #F2D08F;
+    text-align: center;
+    transition: width .15s ease-in-out;
+
+    @media screen and (max-width: 770px) { // Bottom Tabs Version
+      z-index: 1010; // Just below AddThis' layering index.
+      width: 16.7%;
+      bottom: 0;
+      border-width: 0;
+      box-shadow: 0 0 1px 1px #e2dfe2; // Matching AddThis styling.
+    }
+
+    @media screen and (min-width: 771px) { // Side Tabs Version
+      width: 48px;
+      top: 12%;
+      border-left-width: 0;
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+
+      &:not(.active) {
+        &:hover {
+          width: 62px;
+        }
+      }
+
+      &.active {
+        box-shadow: none;
+      }
+    }
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      color: #FFF;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      line-height: 1em;
+    }
+
+    &.active {
+      opacity: 1;
+      color: #E6A11F;
+      background-color: #FFF;
+
+      span {
+        font-size: 11px;
+        color: #E6A11F;
+        text-transform: none;
+      }
+
+      &:hover {
+        border-color: #3973ac;
+        color: #3973ac;
+
+        i::before, span {
+          display: none;
+        }
+
+        i::after {
+          content: "\f00d"; // Close icon (fa-times)
+          display: inline-block;
+          font-family: FontAwesome;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .at-share-dock.atss {
+    @media screen and (max-width: 770px) { // Bottom Tabs Version
+      width: 83.3% !important;
+      left: auto !important; // Allowing element to dock to right.
+    }
+  }
+}

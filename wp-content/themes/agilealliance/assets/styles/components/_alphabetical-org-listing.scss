@@ -1,0 +1,57 @@
+.alphabet-letter > a[id] {
+  position: relative;
+  display: block;
+  top: -25px;
+}
+
+@media screen and (min-width: 1001px) {
+  .alphabet-letter > a[id] {
+    top: -100px;
+  }
+  .admin-bar .alphabet-letter > a[id] {
+    top: -70px;
+  }
+}
+
+@media all and (min-width: 415px) {
+  .alphabetized-orgs-container{
+    flex-direction: column;
+  }
+  .alphabet-container {
+    order:1;
+    width: 100%;
+    display: flex;
+    felx-flow:row;
+    justify-content: space-around;
+    margin-bottom: 1em;
+  }
+  .alphabet-container > div {
+    flex:1 auto;
+  }
+  .alphabet-orgs-list {
+    order:2;
+  }
+}
+
+@media all and (max-width: 414px) {
+  .alphabetized-orgs-container{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+  }
+
+  .alphabet-container {
+    order:2;
+  }
+  .alphabet-orgs-list {
+    order:1;
+    flex: 4 0px;
+  }
+}
+
+.alphabet-grouped-orgs {
+  padding: 1em 0 1em 0;
+}
+.alphabet-grouped-orgs .org-name {
+  padding-left: 1em;
+}

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/polyfills.js",
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    }
+  },
+  "config": {
+    "devUrl": "http://agiall.dev"
+  }
+}

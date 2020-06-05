@@ -1,0 +1,13 @@
+{
+    "name": "agilealliance/wp",
+    "type": "project",
+    "require": {
+        "phpseclib/mcrypt_compat": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "352 Inc.",
+            "email": "hello@352inc.com"
+        }
+    ]
+}

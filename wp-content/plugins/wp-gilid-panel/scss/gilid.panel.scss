@@ -1,0 +1,210 @@
+/*
+ * Gilid Panel - Wordpress SlidePanel Sidebar Widget
+ */
+
+//# import compass
+@import "compass";
+
+//#font 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('../font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//# reset
+.gilidPanel,
+.gilidPanel ul,
+.gilidPanel ul li,
+.gilidPanel ol,
+.gilidPanel ol li,
+.gilidPanel-opener,
+.gilidPanel-opener a{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+	text-transform: none;
+	background-color: transparent;
+	background-image: none; 
+}
+.gilidPanel ul,
+.gilidPanel ul li,
+.gilidPanel ol,
+.gilidPanel ol li,
+.gilidPanel li{
+	list-style-type:none;
+	position: relative;
+}
+
+body{
+	position: relative;
+}
+
+//# opener
+.gilidPanel-opener{
+	position: fixed;
+	top:0px;
+	left: 0px;
+    z-index: 1000;
+    
+	&.gilidPanel-opener-right{
+    	left: auto;
+    	right: 0px;
+    }
+
+    a{
+    	display: block;
+    	background: #2b323a;
+    	color: #fff;
+    	padding:5px 10px;
+    	font-size: 20px;
+
+    	&:visited{
+    		color: #fff;
+    	}
+
+    	&:hover{
+    		text-decoration: none;
+    	}
+
+    	i{
+    		font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			text-decoration: inherit;
+            float:none;
+            line-height: 1em;
+            width: auto;
+            height: auto;
+            line-height: auto;
+			-webkit-font-smoothing: antialiased;
+			*margin-right: .3em;
+
+			&:before{
+				text-decoration: inherit;
+				display: inline-block;
+				speak: none;
+
+				content: "\f0c9";
+			}
+            *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c9;');
+    	}
+    }
+    &.gilidPanel-opener-custom{
+        a{
+            padding: 0px;
+            line-height: 0px;
+        }
+    }
+    &.gilidPanel-opener-opened{
+        .fa{
+            padding: 0px 3px;
+        }
+        .fa:before{
+            content: "\f00d";
+        }
+    }
+}
+
+//# content
+div.gilidPanel{
+	background: #2b323a;
+    position: fixed;
+    width:240px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+    visibility: hidden;
+
+    .gilidPanel-wrap{
+    	padding: 20px 0px 20px 0px;
+    	color:#fff;
+        @include box-sizing( border-box );
+        max-width: 100%;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+    	//widget
+    	.widget{
+            padding:0px 20px 20px;
+    		overflow: hidden;
+    	}
+    	input{
+    		width: 100%;
+    		@include border-radius(0px);
+    	}
+    	a{
+    		color: #fff;
+    		text-decoration: none;
+    		padding:1px 0px;
+    	}
+    	h2.widgettitle{
+    		margin:0px 0px 10px;
+    		padding:3px 10px;
+    		color: #fff;
+    		background: #d55828;
+    	}
+
+    	//menu
+    	.menu .current-menu-item > a{
+    		border-left:2px solid #d55828;
+    		padding-left: 5px;
+    	}
+    	.menu a:hover{
+    		border-left:2px solid #fff;
+    		padding-left: 5px;
+    		@include transition-property(padding);
+			@include transition-duration(0.05s);
+			@include transition-timing-function(ease-in-out);
+    	}
+    	span.gldpnl-dropdown{
+    		position: absolute;
+    		right:0px;
+
+    		&:hover{
+    			cursor: pointer;
+    			color: #d55828;
+    		}
+    	}
+    	.sub-menu{
+			display: none;
+			padding-left:10px;
+			margin: 0px;
+			@include transition-property(opacity);
+			@include transition-duration(0.4s);
+			@include transition-timing-function(ease-in-out);
+		}
+    }
+}
+
+//opened
+.gilidPanel-open{
+    .gilidPanel-overlay{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        @include opacity(0.25);
+        z-index: 500;
+    }
+}
+
+//Responsive
+div.gilidPanel.gilidPanel-responsive{
+    @media screen and (max-width: 767px){
+        max-width: 80% !important;
+    }
+}

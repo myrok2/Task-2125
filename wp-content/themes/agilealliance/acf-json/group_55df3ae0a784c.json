@@ -1,0 +1,359 @@
+{
+    "key": "group_55df3ae0a784c",
+    "title": "Organizations & Corporate Members",
+    "fields": [
+        {
+            "key": "field_56c76ff62b77a",
+            "label": "Corporate Contact",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_565346b063b4f",
+            "label": "Website",
+            "name": "website",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Website"
+        },
+        {
+            "key": "field_55df3aeff9c2e",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55df3b1df9c2f",
+            "label": "Street Address",
+            "name": "street_address",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Street Address",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5642cdbc67b06",
+            "label": "Street Address 2",
+            "name": "street_address_2",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Street Address 2",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5642cdd467b07",
+            "label": "City\/Town",
+            "name": "citytown",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "City\/Town",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5642ce1e67b08",
+            "label": "State\/Province",
+            "name": "stateprovince",
+            "type": "text",
+            "instructions": "Abbreviated",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "State\/Province",
+            "prepend": "",
+            "append": "",
+            "maxlength": 2,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5642ce4967b09",
+            "label": "Zip\/Postal Code",
+            "name": "zippostal_code",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Zip\/Postal Code",
+            "prepend": "",
+            "append": "",
+            "maxlength": 10
+        },
+        {
+            "key": "field_5642ce5f67b0a",
+            "label": "Country",
+            "name": "country",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Country",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55df3bcef9c30",
+            "label": "Toll-Free Telephone",
+            "name": "toll-free_telephone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_55df3c04f9c32",
+            "label": "Local Telephone",
+            "name": "local_telephone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_55df3c17f9c34",
+            "label": "Fax",
+            "name": "fax",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_55df3be4f9c31",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Email",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5627a7a99a6ff",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Logo must be a minimum 65px in height.   Recommended size\/ratio is 190 x 65 pixels.  Any image above this will be resized down. Square logos accepted.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": 65,
+            "min_height": 65,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": ".5",
+            "mime_types": "jpg,jpeg,png,bmp"
+        },
+        {
+            "key": "field_56400a4c7cfdf",
+            "label": "Whitepaper (PDF)",
+            "name": "whitepaper",
+            "type": "file",
+            "instructions": "Company \/ Organization Whitepaper can be uploaded here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "5.0",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_5653470463b51",
+            "label": "Category",
+            "name": "category",
+            "type": "select",
+            "instructions": "Type of business",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "consulting-training-coaching": "Consulting \/ Training Coaching",
+                "software-development-it-tech": "Software Development \/ IT Tech",
+                "software-tools": "Software Tools",
+                "web-development": "Web Development",
+                "product-project-management": "Product \/ Project Management",
+                "press": "Press",
+                "other": "Other"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "label",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aa_organizations"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "format",
+        "page_attributes",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1537284756
+}

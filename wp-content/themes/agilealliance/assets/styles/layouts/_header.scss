@@ -1,0 +1,566 @@
+body {
+  &::before { display: none; }
+  @include header-expanded {
+    &::before {
+      content: 'has-expanded-menu';
+    }
+  }
+}
+
+.wrap { // Global Content Wrapper
+  @include header-expanded {
+    padding-top: $nav-height;
+  }
+}
+
+#loginModal { z-index: $zindex-modal; }
+
+// Header's main components. There parent is .site-header__wrapper
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-header, .top-right-menu-wpr { // Logo & Profile/Search components
+    flex: 0 1 auto;
+  }
+
+  .navbar-collapse { // Nav component
+    flex: 0 1 auto;
+  }
+}
+
+.site-header {
+  @extend .navbar-fixed-top;
+  top: 0;
+  .admin-bar & { // Prevent the UI from looking broken when user's Admin bar is visible
+    top: 32px;
+    @media screen and (max-width: 782px) {
+      top: 46px;
+    }
+  }
+  @include header-collapsed {
+    position: relative;
+  }
+  &__header {
+    @include header-collapsed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px;
+      &::before, &::after { display: none; }
+    }
+  }
+  &__navbar {
+    background-color: white;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.5);
+  }
+  &__wrapper {
+    @include header-expanded {
+      height: $nav-height;
+      @include transition-std(height);
+      .isReduced & {
+        height: $reduced-nav-height;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__logo {
+    @include header-expanded {
+      @include transition-std(height);
+      height: 60px;
+      .isReduced & {
+        height: 40px;
+      }
+      margin-left: 40px; // Match the right-margin of the right menu
+    }
+    @include header-collapsed {
+      height: 40px;
+    }
+  }
+  &__menu-toggle,
+  &__account {
+    @extend .navbar-toggle;
+    padding: 0;
+    margin: 0;
+    color: $brand-dark;
+    span {
+      display: inline-block;
+      margin-top: 2px;
+      @include breakpoint('large') {
+        margin-top: 0;
+      }
+    }
+  }
+  &__menu-toggle {
+    width: 94px;
+    align-self: stretch;
+    .site-header__menu-close,
+    .site-header__menu-open {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 1;
+    }
+    .site-header__menu-close {
+      opacity: 0;
+    }
+    &:not(.collapsed) {
+      .site-header__menu-open {
+        opacity: 0;
+      }
+      .site-header__menu-close {
+        opacity: 1;
+      }
+    }
+  }
+  &__touch-target {
+    border-radius: 100%;
+    height: 34px;
+    width: 34px;
+    border: 2px solid $base-border;
+    &--hamburger {
+      padding-top: 6px;
+      padding-left: 7px;
+      .icon-bar {
+        background-color: $brand-dark;
+        height: 2px;
+        margin-top: 3px !important;
+        width: 16px;
+      }
+    }
+    .avatar {
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+    }
+    &--on-left { // Avatar Container
+      float: left;
+      margin-right: 7px;
+    }
+    &--on-right { // Hamburger Container
+      float: right;
+      margin-left: 7px;
+    }
+    &--avatar {
+      border: none;
+    }
+  }
+  .navbar-collapse { max-height: none; } // Override BS's 340px
+}
+
+.mobile-search-form {
+  margin: 0 -15px;
+  padding: 15px;
+  background: #f3f3f3;
+  @include header-expanded { display: none; }
+  .form-control {
+    border-radius: 50px 0 0 50px;
+    padding-left: 18px;
+  }
+  .btn {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 0 50px 50px 0;
+    color: white;
+    background-color: $brand-blue-light;
+    border: none;
+    z-index: 2;
+    @include breakpoint('medium') {
+      padding-top: 9px;
+      padding-bottom: 10px;
+    }
+    @include breakpoint('large') {
+      padding-top: 10px;
+      padding-bottom: 11px;
+    }
+  }
+}
+
+.top-right-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  min-width: 160px; // Width at widest state (search open) adjusts for reduced right margin when search is open.
+  margin-right: 40px;
+  text-align: initial;
+
+  @include breakpoint('super-wide') {
+    min-width: 250px; // Width at widest state (w/ button text and longer label, "Profile".)
+  }
+
+  @include header-collapsed {
+    display: none;
+  }
+
+  .btn-trigger, .language-selector-wpr {
+    flex: 0 1 auto;
+  }
+
+  .btn-trigger {
+    position: relative;
+    display: inline-block;
+    border: 2px solid $brand-blue-alt;
+    min-width: 36px;
+    padding: 2px 0;
+    margin-right: 12px;
+    opacity: 1;
+    font-size: 15px;
+    text-align: center;
+
+    @include breakpoint('super-wide') { // State w/ button text.
+      padding: 2px 16px 2px 10px;
+    }
+
+      //&.isActive { opacity: .2; }
+
+    &:hover {
+      border-color: $brand-green;
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  .language-selector {
+    color: $brand-primary;
+    margin-right: 8px;
+
+    background-color: white;
+    z-index: 2;
+
+    transition: all 500ms ease;
+
+    &:hover { color: black; }
+    &.isActive {
+      border-color: $brand-blue-dark;
+      opacity: 1;
+      color: $brand-primary;
+    }
+
+    &.isActive:hover path { fill: $brand-primary; }
+
+    #language-selector--text {
+      font-size: 15px;
+
+      @include vertical-align-abs;
+      right: -25px;
+    }
+  }
+
+  .language-selector-wpr {
+    position: relative;
+    display: inline-block;
+    border: 2px solid rgba(153,153,153,.3);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding-right: 2px;
+  }
+
+  .aa_caret-icon {
+    position: absolute;
+    right: 15px;
+    z-index: 1;
+    font-size: 36px;
+    color: white;
+
+    @include transition-std(top);
+
+    &.isActive { top: 45px; }
+
+    top: 33px;
+    @include breakpoint('large') {
+      top: 0;
+      &.isActive.isReduced {
+        top: 33px;
+      }
+    }
+
+  }
+
+  // Custom Google Translate tweaks
+  div#google_translate_element {
+    float: right;
+  }
+
+  .goog-te-gadget-simple {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    span:nth-child(1){
+      display: none;
+    }
+  }
+}
+
+// Force some google translate overrides
+.goog-te-banner-frame.skiptranslate {display: none !important;}
+body { top: 0px !important; }
+
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div {
+  color: #5798b9 !important;
+}
+
+img.goog-te-gadget-icon {
+  background-image: url('https://www.gstatic.com/images/branding/product/1x/translate_24dp.png') !important;
+  background-position: 0 !important;
+}
+
+.goog-te-gadget-icon {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+  display: none;
+}
+
+#lang_sel_click {
+  width: 200px;
+  position: absolute;
+
+  // bottom: 50px;
+  right: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: all 400ms ease-in-out;
+
+  &.isActive {
+    // bottom: -7px;
+    top: 50px;
+    opacity: 1;
+  }
+
+  top: 25px;
+  @include breakpoint('large') {
+    top: -300%;
+    &.isActive.isReduced {
+      top: 25px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    color: white;
+    position: relative;
+
+    .lang_sel_sel {
+      display: none;
+
+      & ~ ul {
+        visibility: visible !important;
+        border: 0 !important;
+      }
+    }
+
+    a,
+    a:visited {
+      display: block;
+      width: 200px;
+      background: #545454 !important;
+      color: white !important;
+      @include font-std(14px);
+      font-weight: 300 !important;
+      padding: 20px 120px 20px 20px !important;
+      text-align: left;
+      border: 0;
+      border-bottom: 1px solid #656565 !important;
+      cursor: pointer;
+
+      @include transition-std(all);
+
+      &:hover,
+      &:focus {
+        background-color: lighten(#545454, 8%) !important;
+        text-decoration: none;
+      }
+    }
+
+    ul li:last-of-type a { border: none !important; }
+  }
+}
+
+//
+// Archive Header
+// --------------------------------------------------
+
+// @include font-styling($color, $size, $height);
+
+.aa_archive-header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  .aa_img-overlay { background-color: $img-overlay-bg; }
+}
+
+@media screen and (max-width: 401px) {
+  .ubermenu-responsive.ubermenu {
+    margin-top: -3px !important;
+  }
+}
+
+.search-trigger {
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+
+  &:hover, &:focus {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.search-trigger__open { // Search icon
+  @include breakpoint('super-wide') {
+    &::after {
+      content: 'Search';
+      display: inline-block;
+      margin-left: 5px;
+      font-family: $sofia;
+      font-size: 15px;
+    }
+  }
+
+  .search-container--open & {  // Search Open State...
+    &::before, &::after { // Hide icon & text
+      display: none;
+    }
+  }
+}
+.search-trigger__close { // Close icon
+  display: none;
+  color: $brand-grey-light;
+
+  .search-container--open & {  // Search Open State...
+    display: inline-block;
+  }
+}
+
+.header-search-form {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  &__input {
+    border: none;
+    box-shadow: none !important;
+    background-color: transparent;
+  }
+  &__submit {
+    border-radius: 0;
+    border-width: 0 1px 0 0;
+    background-color: transparent;
+    color: $brand-blue-alt;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 1em;
+
+    &:hover {
+      background-color: $brand-green;
+      color: white;
+    }
+  }
+
+  .input-group {
+    float: left;
+    max-width: calc(100% - 30px); // Adjusting for close icon inline placement
+
+    @include breakpoint('super-wide') {
+      max-width: 205px;
+    }
+  }
+}
+
+.navigation-banner__menu-col {
+  @media screen and (max-width:1000px) {
+    padding-right: 2em !important;
+  }
+}
+
+.top-right-menu {
+  .aa_login {
+    font-size: 15px;
+    font-weight: $sofia-regular;
+    border-radius: 18px;
+    color: $brand-blue-alt;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      background-color: $brand-green;
+      color: white;
+
+      svg path { fill: white; }
+    }
+
+    svg { // Explicit dimensions are necessary for IE
+      width: 16px;
+      height: 15px;
+
+      path { fill: $brand-blue-alt; }
+    }
+
+    .link-text {
+      display: none;
+
+      @include breakpoint('super-wide') {
+        display: inline-block;
+      }
+    }
+  }
+  .search-container {
+    border-radius: 18px;
+    color: white;
+    background-color: $brand-blue-alt;
+
+    &:hover {
+      background-color: $brand-green;
+    }
+  }
+
+  &.search-container--open { // .top-right-menu Search Open State...
+    justify-content: flex-start;
+    margin-right: 20px;
+
+    @include breakpoint('super-wide') {
+      margin-right: 40px; // Restore original margin
+    }
+
+    .btn-trigger {
+      margin-right: 0;
+
+      &:hover {
+        border-color: $brand-blue-alt;
+      }
+    }
+
+    .search-container {
+      width: 180px; // Allocate space for Search Form (.header-search-form)
+      background-color: white;
+
+      @include breakpoint('super-wide') {
+        width: 240px; // Allocate space for Search Form (.header-search-form)
+      }
+    }
+
+    .aa_login,
+    .language-selector-wpr {
+      display: none;
+    }
+
+    .header-search-form {
+      display: block;
+    }
+  }
+}

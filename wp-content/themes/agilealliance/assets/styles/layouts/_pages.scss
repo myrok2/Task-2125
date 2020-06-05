@@ -1,0 +1,336 @@
+/* On Page Disclaimers (included in content areas) */
+.disclaimer {
+  font-size: 12px;
+  color: grey;
+  line-height: 1em;
+ }
+
+
+//
+// Search Results
+// --------------------------------------------------
+
+$border-color: lighten(#979797, 30%);
+
+.aa_search-results {
+  .header {
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 20px;
+
+    h1,
+    .query-result-info { padding: 0 15px; }
+
+    h1 {
+      line-height: 1.3;
+      margin-bottom: 30px;
+    }
+  }
+
+  .aa_result-template {
+    padding: 40px 0;
+    margin: 0 15px;
+    border-bottom: 1px solid $border-color;
+
+    h3 {
+      font-weight: 300;
+      margin-bottom: 30px;
+
+      a {
+      color: $base-text;
+      text-decoration: none;
+      }
+    }
+
+    p {
+      @include font-std(19px);
+      color: $base-text-light;
+    }
+
+    .aa_posted-under,
+    .aa_days-ago {
+      @include font-std(16px);
+      text-align: right;
+    }
+
+    .aa_posted-under {
+      font-weight: 300;
+      color: $base-text;
+      margin-bottom: 0;
+      margin-top: 20px;
+    }
+
+    .aa_days-ago {
+      display: block;
+      color: $base-text-light;
+    }
+  }
+}
+
+// ----- Query results information  -----
+.query-result-info {
+  @include font-std(16px);
+  color: $base-text-light;
+
+  span {
+    color: $base-text-dark;
+    font-weight: 300;
+  }
+}
+
+// ----- Post Pagination  -----
+.aa_post-pagination {
+  margin-bottom: 20px;
+  @include font-std(16px);
+  font-weight: 300;
+
+  div[class*="col-"] { padding: 0; }
+
+  .pagination,
+  .nav-links { width: 100%; }
+
+  .page-numbers {
+    color: #000;
+    margin: 0 12px;
+
+    &.prev,
+    &.next {
+      font-size: 12px;
+    }
+
+    &.current {
+      color: $base-text-light;
+      text-align: center;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .aa_search-results .aa_result-template .aa_posted-under { margin-top: 0; }
+  .aa_search-results .header { margin-bottom: 80px; }
+  .aa_search-results .aa_result-template {
+    padding: 40px 15px;
+    margin: 0 auto;
+
+    &:last-of-type { border-bottom: none; }
+  }
+  .aa_post-pagination {
+    margin-bottom: 80px;
+
+    .nav-links {
+      width:auto;
+    }
+
+    .page-numbers {
+      margin: 0 8px;
+      display: inline;
+
+      &.prev,
+      &.next,
+      &.current {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+//
+// General landing page styles
+// --------------------------------------------------
+
+.aa_hero-bottom-border {
+  border-bottom: 3px solid #fff;
+
+  &.yellow { border-color: $brand-yellow; }
+}
+
+.aa_btn-vc {
+  padding: 10px 0 !important;
+
+  button { @extend .aa_btn;  }
+
+  .ubtn-icon{ right: 15px !important; }
+}
+
+//
+// Events
+// --------------------------------------------------
+
+// ----- Hero  -----
+#events-hero {
+  margin-bottom: 0;
+}
+
+// ----- Section 2  -----
+.aa_events-section-2 {
+  @include headline-subtext($brand-grey-dark, 24px, 33px, $brand-grey-light, 16px, 24px);
+
+  p { max-width: 550px !important; }
+}
+
+@include breakpoint(medium) {
+  .aa_events-section-2 {
+    h2 {
+      font-size: 36px !important;
+      line-height: 43px !important;
+    }
+
+    p,
+    p span {
+      font-size: 20px !important;
+      line-height: 28px !important;
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .aa_events-section-2 {
+    p,
+    p span {
+      font-size: 24px !important;
+      line-height: 36px !important;
+    }
+  }
+}
+
+// ----- Section 3  -----
+.aa_events-section-3 {
+  @include headline-subtext($brand-grey-light, 18px, 32px, $brand-grey-light, 16px, 24px);
+
+  h2 { padding-right: 50% !important; }
+
+  .aa_events-cta-text {
+    & > .wpb_wrapper:first-of-type {
+      @extend .aa_img-overlay
+    }
+
+    .aa_events-text-wpr {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    span.s1 { font-weight: 200 !important; }
+  }
+}
+
+@include breakpoint(medium) {
+
+  .aa_events-cta-text { height: 500px; }
+  .aa_events-section-3 h2 { padding-right: 35% !important; }
+
+  .aa_events-section-3 {
+    h2 {
+      font-size: 24px !important;
+      line-height: 29px !important;
+    }
+
+    p,
+    p span {
+      font-size: 18px !important;
+      line-height: 29px !important;
+    }
+  }
+}
+
+
+// ----- Section 4  -----
+.aa_events-section-4 {
+  @include headline-subtext($brand-grey-light, 18px, 32px, $brand-grey-light, 16px, 24px);
+
+  p { max-width: 550px !important; }
+}
+
+@include breakpoint(medium) {
+  .aa_events-section-4 {
+    h2 {
+      font-size: 24px !important;
+      color: $nav-coal;
+      line-height: 29px !important;
+    }
+
+    p,
+    p span {
+      font-size: 18px !important;
+      line-height: 29px !important;
+    }
+  }
+}
+
+//
+// Logo Files
+// --------------------------------------------------
+
+.aa_logo-download-card {
+  margin: 3.6em 0;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border: 1px solid $base-border-dark;
+
+  @include breakpoint(medium) {
+    border: 0;
+    &:not(:last-of-type) { border-right: 1px solid $base-border-dark; }
+  }
+
+  .wpb_content_element {
+    margin-bottom: 15px;
+
+    // @include breakpoint(medium) { margin-bottom: 35px; }
+  }
+
+  img {
+    width: 65%;
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 0;
+    @include font-styling(#000, 18px, 24px);
+  }
+
+  .aa_img-type-type p {
+    @include font-styling($base-text-light, 16px, 20px);
+    font-weight: 200 !important;
+
+    @include breakpoint(medium) {
+      @include font-styling($base-text-light, 13px, 20px);
+    }
+  }
+
+  .aa_vc-btn { margin:0; }
+}
+
+//
+// Timeline page
+// --------------------------------------------------
+
+.timeline-header h3 {
+  @include font-styling($base-text, 16px !important, 24px);
+
+  & + div {
+    @include font-styling($base-text, 14px, 20px);
+    margin-bottom: 1em;
+  }
+}
+
+.timeline-header-block:nth-of-type(even) {
+  padding-left: 0px !important;
+  @include breakpoint(medium) { padding-left: 15px !important; }
+}
+
+.timeline-header-block:nth-of-type(even) {
+  padding-right: 0px !important;
+  @include breakpoint(medium) { padding-right: 15px !important; }
+}
+
+//
+// Videos & Podcast Templates
+// --------------------------------------------------
+
+// Remove overlay
+#aa-video, #aa-podcast {
+  .wpb_wrapper {
+    background: none;
+  }
+}

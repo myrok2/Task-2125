@@ -1,0 +1,160 @@
+//
+// ACF Form
+// --------------------------------------------------
+// Form headline - found in creat-organization-form.php
+.aa_org-form-headline {
+  text-align: center;
+  @extend .aa_vc-section-max-width;
+  padding-top: 3.6em;
+}
+
+.acf-form {
+  @extend .aa_vc-section-max-width;
+  @include section-padding;
+}
+
+.acf-field {
+  position: relative;
+  border-top: 0 !important;
+}
+
+.acf-label {
+  color: $brand-grey-light;
+  font-weight: 300 !important;
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  opacity: 0;
+  cursor: default;
+  margin: 0 !important;
+
+  label {
+    z-index: 10;
+
+    @include font-styling($brand-grey-light, 16px !important, 24px !important);
+    font-weight: 300 !important;
+
+    @include breakpoint(medium) {
+      font-size: 16px !important;
+    }
+  }
+
+  .description {
+    color: #777;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4em;
+    font-style: normal;
+    margin: 3px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  span { color: $brand-grey-light !important; }
+
+  @include transition-std(all);
+
+  &.isFocus {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.acf-field-textarea .acf-label {
+
+  label {
+    z-index: 10;
+
+    @include font-styling($brand-grey-light, 16px !important, 24px !important);
+    font-weight: 300 !important;
+  }
+
+  &.isFocus {
+    @include breakpoint(medium) {
+      label {
+        font-size: 16px !important;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.acf-field-textarea[data-name="description"] .acf-label { opacity: 1; }
+
+.acf-field[data-name="logo"],
+.acf-field[data-name="whitepaper"],
+.acf-field[data-name="category"] {
+
+  .acf-label {
+    top: 0;
+    opacity: 1;
+    z-index: 10;
+  }
+
+  .acf-input { padding-top: 2.5em; }
+
+  input {
+    border-bottom: 0;
+    width: auto !important;
+    line-height: 0 !important;
+    position: relative;
+    cursor: pointer;
+  }
+
+  input::-webkit-file-upload-button { cursor: pointer; }
+}
+
+.acf-field[data-name="logo"] {
+  margin-top: 1.2em;
+
+  .acf-input {
+    padding-top: 4em;
+    @include breakpoint(medium) { padding-top: 2.5em; }
+  }
+}
+
+.acf-field-textarea .gfield_label {
+  top:38px;
+  opacity: 1;
+  font-weight: 200 !important;
+
+  @include transition-std(all);
+
+  &.isFocus {
+    top: 0;
+    height: 9.375em;
+    font-weight: 300 !important;
+  }
+}
+
+.acf-field input,
+.acf-field textarea {
+  @include forms-input();
+  @include font-styling($base-text, 16px !important, 24px !important);
+  height: auto;
+  text-indent: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 5px 0 !important;
+  padding-top: 1.05em !important;
+}
+
+.acf-field textarea {
+  height: 3em !important;
+  @include transition-std(all);
+
+  &.isFocus { height: 9.25em !important; }
+}
+
+// Removes default icon from URL field
+.acf-url i { display: none; }
+
+// Removes default sub-text from State/Province
+.acf-field[data-name="stateprovince"] .acf-label p { display: none; }
+
+// Submit Button
+.acf-form-submit input {
+  margin-top: 2em;
+  @extend .aa_btn;
+  padding: 4px 40px !important;
+  @extend .aa_border-green-primary;
+  @include btn-std($brand-green);
+}

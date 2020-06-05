@@ -1,0 +1,18 @@
+# Put overrides to your pantheon.upstream.yml file here.
+# For more information, see: https://pantheon.io/docs/pantheon-yml/
+api_version: 1
+php_version: 7.3
+web_docroot: true
+protected_web_paths:
+- /wp-content/plugins/agile-alliance-search/client/build
+- /wp-content/plugins/agile-alliance-search/client/config
+- /wp-content/plugins/agile-alliance-search/client/src
+- /wp-content/plugins/agile-alliance-search/client/static
+- /wp-content/plugins/agile-alliance-search/client/index.html
+- /wp-content/plugins/agile-alliance-search/client/package.json
+- /wp-content/plugins/agile-alliance-search/client/README.md
+- /wp-content/plugins/agile-alliance-search/client/yarn.lock
+- /wp-content/plugins/agile-alliance-search/es-mapping.json
+- /wp-content/plugins/agile-alliance-search/es-settings.json
+- /wp-content/plugins/agile-alliance-search/package.json
+- /wp-content/plugins/agile-alliance-search/client/dist/index.html

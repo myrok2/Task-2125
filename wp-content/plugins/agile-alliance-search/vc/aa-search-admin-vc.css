@@ -1,0 +1,66 @@
+[data-vc-shortcode='aa_search'] .vc_edit-form-tab {
+    margin-left: 0;
+    margin-right: 0;
+}
+.aa-search-admin__three-col-checkboxes .edit_form_line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.aa-search-admin__three-col-checkboxes label {
+    flex: 1 0 30%;
+    max-width: 33%;
+}
+.aa-search-admin__three-col-checkboxes label:first-child {
+   font-weight: bold;
+}
+.aa-search-admin__three-col-checkboxes .vc_description {
+    width: 100%;
+}
+
+/* Component Display */
+[data-element_type='aa_search'] .wpb_element_title {
+    font-size: 1.4em;
+}
+[data-element_type='aa_search'] .vc_element-icon {
+    display: none;
+}
+.wpb_aa_search .wpb_vc_param_value:before {
+    content: attr(name)": ";
+}
+.wpb_vc_param_value:before {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 17px;
+}
+.wpb_aa_search .aa-search-admin__post_types:before {
+    content: 'Post Types: ';
+}
+.wpb_aa_search .aa-search-admin__initial-query:before {
+    content: 'Initial Query: ';
+}
+.aa-search-admin__display-text-search {
+    font-size: 0;
+}
+.wpb_aa_search .aa-search-admin__display-text-search:before {
+    content: 'Text Search: Enabled'
+}
+.aa-search-admin__display-infinite-scroll {
+    font-size: 0;
+}
+.wpb_aa_search .aa-search-admin__display-infinite-scroll:before {
+    content: 'Infinite Scroll: Enabled'
+}
+.wpb_aa_search .aa-search-admin__max-pages:before {
+    content: 'Maximum number of pages: ';
+}
+.wpb_aa_search .wpb_vc_param_value {
+    margin-top: 5px;
+    word-wrap: break-word;
+    background-color: rgba(158, 144, 144, 0.11);
+    padding: 5px 7px;
+    border-radius: 5px;
+}
+.wpb_aa_search .wpb_vc_param_value:empty {
+    display: none;
+}

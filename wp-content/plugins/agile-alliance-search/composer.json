@@ -1,0 +1,7 @@
+{
+  "require": {
+    "elasticsearch/elasticsearch": "~5.0",
+    "firebase/php-jwt": "^4.0",
+    "jsq/amazon-es-php": "^0.2.0"
+  }
+}

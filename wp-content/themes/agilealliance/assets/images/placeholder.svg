@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="720px" height="460px" viewBox="0 0 720 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15588) - http://www.bohemiancoding.com/sketch -->
+    <title>CTA - Upcoming Conferences + Path 81</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="720" height="460"></rect>
+    </defs>
+    <g id="Page-&amp;-Content-Templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Top-Level-Page-Content-Template" sketch:type="MSArtboardGroup" transform="translate(0.000000, -943.000000)">
+            <g id="CTA---Upcoming-Conferences-+-Path-81" sketch:type="MSLayerGroup" transform="translate(0.000000, 943.000000)">
+                <g id="CTA---Upcoming-Conferences">
+                    <mask id="mask-2" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#343434" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                </g>
+                <path d="M109.214338,286.493725 L195.953517,199.754546 L276.816427,280.617455 L438.433883,119 L661,341.566117 L59,341.566117 L109.214338,286.493725 Z" id="Path-81" opacity="0.100000001" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

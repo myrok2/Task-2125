@@ -1,0 +1,319 @@
+{
+    "key": "group_55d1ebf880e07",
+    "title": "Community Groups",
+    "fields": [
+        {
+            "key": "field_55d1f78caf9c5",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Community \"Logo\"<\/h2>\r\n<b>To set the community group logo - use the \"Set Featured Image\" option in the panel to the right.<\/b>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_55d1f753c8df9",
+            "label": "Group Description",
+            "name": "group_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_566eee9306092",
+            "label": "Group Image",
+            "name": "group_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "bmp,gif,jpg,jpeg,png"
+        },
+        {
+            "key": "field_55d1f684c8df5",
+            "label": "Direct Contact Information",
+            "name": "direct_contact_information",
+            "type": "repeater",
+            "instructions": "To add a contact person for this group, click \"Add Contact\".  You can add as many as needed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Contact",
+            "sub_fields": [
+                {
+                    "key": "field_55d1f71fc8df8",
+                    "label": "Contact Name",
+                    "name": "contact_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55d1f70ec8df7",
+                    "label": "Contact Email",
+                    "name": "contact_email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_55d1f6b5c8df6",
+                    "label": "Contact Phone",
+                    "name": "phone",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ],
+            "collapsed": ""
+        },
+        {
+            "key": "field_566eeddcd9a71",
+            "label": "Region or City",
+            "name": "region_or_city",
+            "type": "text",
+            "instructions": "Enter Region, State or City.  Example: Chicago, IL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_566eec1ab7f39",
+            "label": "Group Address",
+            "name": "address",
+            "type": "textarea",
+            "instructions": "Enter Group Meeting Address:\r\n123 Sample Road\r\nCity, State ZipCode",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_566eed9149223",
+            "label": "Contact Number",
+            "name": "contact_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5671025ac2755",
+            "label": "Community Group Contact Email",
+            "name": "community_group_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_55d1f55dc8df0",
+            "label": "Website",
+            "name": "website",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_55d20e34a335c",
+            "label": "Meetup URL",
+            "name": "meetup",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_55d1f5f7c8df2",
+            "label": "Facebook URL",
+            "name": "facebook_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_55d1f61fc8df3",
+            "label": "Twitter URL",
+            "name": "twitter_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aa_community_groups"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1578684199
+}
