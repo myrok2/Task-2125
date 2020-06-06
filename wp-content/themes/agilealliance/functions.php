@@ -768,6 +768,12 @@ function save_post_callback($post_id){
     $old = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $table WHERE p2p_to = $post->ID" ) );
 
 $wpdb->query($wpdb->prepare("UPDATE $table SET p2p_from='$post->post_author' WHERE p2p_to=$post->ID"));
+ $u = new WP_User($post->post_author);
+        // Remove role
+        $u->remove_role( 's2member_level2' );
+        // Add role
+        $u->add_role( 'subscriber' );
 update_user_meta($old->p2p_from, 'aa_created_organization','0');
+update_user_meta($post->post_author, 'aa_created_organization','1');
     //if you get here then it's your post type so do your thing....
 }
