@@ -1,7 +1,8 @@
 <?php
 
 define( 'P2P_BOX_NONCE', 'p2p-box' );
-
+include_once  (ABSPATH . '/wp-admin/plugins/memberpress-corporate/app/models/class-mpca-corporate-account.php');
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 class P2P_Box_Factory extends P2P_Factory {
 
 	protected $key = 'admin_box';
@@ -87,6 +88,8 @@ class P2P_Box_Factory extends P2P_Factory {
 	 * Collect metadata from all boxes.
 	 */
 	function save_post( $post_id, $post ) {
+	    global $wpdb;
+	   
 		if ( 'revision' == $post->post_type || defined( 'DOING_AJAX' ) )
 			return;
 
@@ -94,24 +97,36 @@ class P2P_Box_Factory extends P2P_Factory {
 			// Loop through the hidden fields instead of through $_POST['p2p_meta'] because empty checkboxes send no data.
 			foreach ( $_POST['p2p_connections'] as $p2p_id ) {
 				$data = scbForms::get_value( array( 'p2p_meta', $p2p_id ), $_POST, array() );
-
+               
 				$connection = p2p_get_connection( $p2p_id );
-
+                
+                
 				if ( ! $connection )
 					continue;
 
 				$fields = p2p_type( $connection->p2p_type )->fields;
-
+               
 				foreach ( $fields as $key => &$field ) {
 					$field['name'] = $key;
 				}
-
+                
 				$data = scbForms::validate_post_data( $fields, $data );
 
 				scbForms::update_meta( $fields, $data, $p2p_id, 'p2p' );
+			
+				if($data['corporate_contact'][0] == 1){
+				    $plugin_b  = new MPCA_Corporate_Account;
+				    $thepost = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->p2p WHERE p2p_id =".$p2p_id ) );
+				   
+				    $corporate_account_ids = get_user_meta($thepost->p2p_to,'mpca_corporate_account_id');
+				   
+				    $plugin_b->admin_add_sub_account_user($thepost->p2p_from,$corporate_account_ids[1],$post);
+				    
+				}
+		
 			}
 		}
-
+		
 		// Ordering
 		if ( isset( $_POST['p2p_order'] ) ) {
 			foreach ( $_POST['p2p_order'] as $key => $list ) {
@@ -120,14 +135,21 @@ class P2P_Box_Factory extends P2P_Factory {
 				}
 			}
 		}
+		
+		header('Location:'. home_url().'/wp-admin/post.php?post=8051130&action=edit&classic-editor');
+		exit;
+	
 	}
 
 	/**
 	 * Controller for all box ajax requests.
 	 */
 	function wp_ajax_p2p_box() {
+	   
 		check_ajax_referer( P2P_BOX_NONCE, 'nonce' );
-
+         if(isset($_REQUEST['p2p_id'])){
+	        $this->remove_sub_user_account($_REQUEST['p2p_id']);
+	    }
 		$ctype = p2p_type( $_REQUEST['p2p_type'] );
 		if ( !$ctype || !isset( $this->queue[$ctype->name] ) )
 			die(0);
@@ -146,8 +168,17 @@ class P2P_Box_Factory extends P2P_Factory {
 		$box = $this->create_box( $directed );
 
 		$method = 'ajax_' . $_REQUEST['subaction'];
-
+        
 		$box->$method();
+	}
+	function remove_sub_user_account($p2p_id){
+	    global $wpdb;
+	    $plugin_b  = new MPCA_Corporate_Account;
+	    $thepost = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->p2p WHERE p2p_id =".$p2p_id ) );
+	    $corporate_account_ids = get_user_meta($thepost->p2p_from,'mpca_corporate_account_id');
+	    
+	    $plugin_b->admin_remove_sub_account_user($thepost->p2p_from,$corporate_account_ids[1]);
+	    return true;
 	}
 }
 
