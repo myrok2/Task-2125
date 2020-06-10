@@ -291,14 +291,16 @@ class MPCA_Corporate_Account extends MeprBaseModel {
    * @return Transaction The sub account's transaction
    */
   public function add_sub_account_user($user_id) {
+  
     $corporate_account_ids = get_user_meta($user_id,'mpca_corporate_account_id');
-
+    ;
     $result = $this->validate();
     if( is_wp_error($result) ) {
       return $result;
     }
 
     if(!in_array($this->id, $corporate_account_ids)) {
+       
       add_user_meta($user_id, 'mpca_corporate_account_id', $this->id);
     }
 
@@ -355,15 +357,16 @@ class MPCA_Corporate_Account extends MeprBaseModel {
 
     delete_user_meta($user_id, 'mpca_corporate_account_id', $this->id);
     delete_user_meta($user_id, 'wp_s2member_access_cap_times', $this->id);
+    delete_user_meta($user_id, 'mepr_company');
+    delete_user_meta($user_id, 'aa_membership_type');
+    delete_user_meta($user_id, 'aa_created_organization');
     $u = new WP_User($user_id);
-        
-        // Remove role
-        $u->remove_role( 's2member_level2' );
-        
-        // Add role
-        $u->add_role( 'subscriber' );
- 
-    
+    $u->remove_role( 's2member_level2' );
+    $u->add_role( 'subscriber' );
+     $wpdb->query(
+              'DELETE  FROM '.$wpdb->prefix.'p2p
+               WHERE p2p_from = "'.$user_id.'"'
+);
 
     if($transaction !== false) {
       MPCA_Event::record_event('sub-account-removed', $transaction->id, MPCA_Event::$transactions_str);
@@ -506,6 +509,92 @@ class MPCA_Corporate_Account extends MeprBaseModel {
 
   public function reset_parent_transactions() {
     return MPCA_Sync_Transactions::reset_parent_transactions($this->id);
+  }
+  
+    /**
+   * Add a sub account user or return false
+   *
+   * @param int $id User ID of the sub-account to associate with
+   * @return Transaction The sub account's transaction
+   */
+  public function admin_add_sub_account_user($user_id,$post_id,$post) {
+  
+    $corporate_account_ids = get_user_meta($user_id,'mpca_corporate_account_id');
+    
+    
+    // $result = $this->validate();
+    // if( is_wp_error($result) ) {
+    //   return $result;
+    // }
+
+    if(!in_array($post_id, $corporate_account_ids)) {
+      
+      update_user_meta($user_id, 'mpca_corporate_account_id', $post_id);
+      update_user_meta($user_id,'aa_membership_type','corporate');
+      update_user_meta($user_id, 'wp_s2member_access_cap_times', $post_id);
+      update_user_meta($user_id, 'aa_created_organization', true );
+      update_user_meta($user_id, 'mepr_company',$post->post_title );
+      
+      $u = new WP_User($user_id);
+        $u->remove_role('subscriber');
+        $u->add_role('s2member_level2');
+       
+    }
+
+    // Get the parent_transaction and ensure it's setup properly
+    $parent_transaction = $this->setup_parent_transaction();
+
+    $transaction = self::get_user_sub_account_transaction($user_id);
+
+    if(!$transaction) {
+      $transaction_id = MPCA_Sync_Transactions::add_transaction($user_id, $parent_transaction->id);
+    }
+    else {
+      $transaction_id = MPCA_Sync_Transactions::update_transaction($transaction->id, $parent_transaction->id);
+    }
+
+    MPCA_Event::record_event('sub-account-added', $transaction_id, MPCA_Event::$transactions_str);
+    return true;
+    // return new MeprTransaction($transaction_id);
+  }
+  
+  public function admin_remove_sub_account_user($user_id,$post_id) {
+    global $wpdb;
+    $mepr_db = MeprDb::fetch();
+    $transaction = self::get_user_sub_account_transaction($user_id);
+
+    //Let's expire the txn instead of deleting it
+    //That way our transaction-expired events will still trigger
+    //And the sub-account user will be removed from marketing lists etc like they should be
+    $q = $wpdb->prepare(
+      " UPDATE {$mepr_db->transactions}
+        SET expires_at=%s
+        WHERE txn_type=%s
+          AND corporate_account_id=%d
+          AND user_id=%d
+      ",
+      gmdate('c', (time() - 3600)), //Expired 1 hour ago just to make sure they're not active
+      'sub_account',
+      $post_id,
+      $user_id
+    );
+
+    $wpdb->query($q);
+
+     delete_user_meta($user_id, 'mpca_corporate_account_id');
+    delete_user_meta($user_id, 'wp_s2member_access_cap_times');
+    delete_user_meta($user_id, 'mepr_company');
+    delete_user_meta($user_id, 'aa_membership_type');
+     delete_user_meta($user_id, 'aa_created_organization');
+    
+
+    $u = new WP_User($user_id);
+        $u->remove_role( 's2member_level2' );
+        // Add role
+        $u->add_role( 'subscriber' );
+    if($transaction !== false) {
+      MPCA_Event::record_event('sub-account-removed', $transaction->id, MPCA_Event::$transactions_str);
+    }
   }
 
 }
